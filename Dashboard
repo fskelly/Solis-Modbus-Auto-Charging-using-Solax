@@ -369,35 +369,6 @@ Paste the following directly into your HA overview.
               - entity: sensor.solcast_api_used
                 name: API Used
             columns: 4
-          - show_name: true
-            show_icon: false
-            show_state: true
-            type: glance
-            entities:
-              - entity: sensor.peak_import_cost
-                name: peak in
-              - entity: sensor.offpeak_import_cost
-                name: offpeak in
-              - entity: sensor.flux_import_cost
-                name: flux in
-              - entity: sensor.daily_elec_import_cost
-                name: import total
-              - entity: sensor.peak_export_profit
-                name: peak out
-              - entity: sensor.offpeak_export_profit
-                name: offpeak out
-              - entity: sensor.flux_export_profit
-                name: flux out
-              - entity: sensor.daily_elec_export_profit
-                name: export total
-              - entity: sensor.offpeak_ratio
-              - entity: sensor.daily_gas_import_cost
-                name: gas total
-              - entity: sensor.daily_import_export_cost
-                name: today total
-              - entity: sensor.break_even_export_kwh
-                name: break even
-            columns: 4
       - square: false
         columns: 1
         type: grid
