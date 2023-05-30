@@ -1,0 +1,34 @@
+********************************************************************************************************************
+
+You must create the following Helpers in HA.
+
+1. Click Settings > Devices & Services > Helpers > + "Create Helper"
+
+2. Use the 3rd line of each of the below to choose helpers (number or button).  Name them exactly the same as specified here.  Your max/min and step sizes will be dependant on your own needs, but can be left as default for now if you're not sure.
+
+********************************************************************************************************************
+
+
+Background Load
+input_number.background_load
+Number
+
+Boost Charge
+input_number.boost_charge
+Number
+
+Expected Consumption
+input_number.expected_consumption
+Number
+
+Expected Consumption Tomorrow
+input_number.expected_consumption_tomorrow
+Number
+
+Reset Consumption Defaults
+input_button.reset_consumption_defaults
+Button
+
+Trigger SoC
+input_number.target_usable_soc
+Number
