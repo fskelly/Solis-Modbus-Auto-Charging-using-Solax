@@ -145,11 +145,6 @@ Paste the following directly into your Configuration.yaml file
         device_class: energy
         state: "{{ states('input_number.expected_consumption')| float(0) - states('sensor.solax_house_load_today')| float(0) | round(2) }}"     
   - sensor:
-      - name: "offpeak ratio"
-        unique_id: "offpeak ratio"
-        unit_of_measurement: '%'
-        state: "{{( 100 / ((states('sensor.octopus_flux_tariff_offpeak')| float(0) + states('sensor.octopus_flux_tariff_peak')| float(0) + states('sensor.octopus_flux_tariff_flux')| float(0))) * (states('sensor.octopus_flux_tariff_offpeak')| float(0))) | round(2) }}"
-  - sensor:
       - name: "String 1 Output"
         unit_of_measurement: 'W'
         device_class: power
