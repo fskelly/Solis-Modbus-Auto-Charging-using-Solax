@@ -14,6 +14,6 @@ Required HA integrations for this to work are Solax Modbus and Solcast (configur
 
 Feedback welcomed.
 
-Here is what the full Dashboard will look like:
+Here is what the full Dashboard will look like (nb some graph data missing due to coding changes):
 
 ![HA Export Dashboard](https://github.com/jevburchell/Solis-Modbus-Auto-Charging-using-Solax/assets/128035411/0e284912-03a1-4aca-8604-2e643d969eb3)
