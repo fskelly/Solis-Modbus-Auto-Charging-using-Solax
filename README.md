@@ -12,8 +12,6 @@ You must install HACS integrations and frontend as specified in the repo files.
 
 Required HA integrations for this to work are Solax Modbus and Solcast (configured to your existing system).
 
-Feedback welcomed.
-
 Here is what the full Dashboard will look like (nb some graph data missing due to coding changes):
 
 ![HA Export Dashboard](https://github.com/jevburchell/Solis-Modbus-Auto-Charging-using-Solax/assets/128035411/0e284912-03a1-4aca-8604-2e643d969eb3)
@@ -33,3 +31,10 @@ INSTALLATION:
     - Openweathermap API Key
     - Solax integration settings (you must enter the correct IP address of your Modbus device which connects to your inverter)
     - Battery Heat and Cooling Fans buttons will need to be linked to your own devices, if you have them.
+
+HA Credentials: 
+    user: default_user
+    password: abcde12345
+    Please change these...
+    
+Feedback welcomed!
