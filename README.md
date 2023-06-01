@@ -19,5 +19,5 @@ Here is what the full Dashboard will look like (nb some graph data missing due t
 ![HA Export Dashboard](https://github.com/jevburchell/Solis-Modbus-Auto-Charging-using-Solax/assets/128035411/0e284912-03a1-4aca-8604-2e643d969eb3)
 
 
-Alternatively, for those of you who are starting fresh with Home Assistant, you may simply install this Backup file to your system.  This will bring across all code contained in this Repo, but YOU WILL LOSE ANY EXISTING DATA ON YOUR HOME ASSISTANT INSTANCE.  
+Alternatively, for those of you who are starting fresh with Home Assistant, you may simply install [this](https://github.com/jevburchell/Solis-Modbus-Auto-Charging-using-Solax/blob/main/HA%20Solis%20Solax%20Automation%20Backup%201.6.23.tar) Backup file to your system.  This will bring across all code contained in this Repo, but YOU WILL LOSE ANY EXISTING DATA ON YOUR HOME ASSISTANT INSTANCE.  
 
