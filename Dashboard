@@ -200,6 +200,7 @@ Paste the following directly into your HA overview.
                 icon_type: none
                 name: Charge Current
                 fill_container: false
+		layout: vertical
             columns: 3
           - type: entities
             entities:
