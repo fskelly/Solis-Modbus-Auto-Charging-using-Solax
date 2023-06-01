@@ -7,7 +7,6 @@ Paste the following directly into your Configuration.yaml file
 2. If you have template sensors setup already, paste the following underneath "template:".  If not, you need to write "template:" on a new line, and paste the following underneath:
 
 ********************************************************************************************************************
-
 template:
 ##Charge Calculators
   - sensor:
@@ -130,11 +129,11 @@ template:
         device_class: power
         state: "{{((states('number.solax_timed_charge_current') | float(0) * 55)) | round(2) }}"
   - sensor:
-      - name: "suggested_charge_power"
-        unique_id: "suggested_charge_power"
-        unit_of_measurement: 'W'
+      - name: "calculated_charge_current"
+        unique_id: "calculated_charge_current"
+        unit_of_measurement: 'A'
         device_class: energy
-        state: "{{ (states('sensor.soc_usableforcecharge') | float(0) / 3 * 1000) | round(2) }}"
+        state: "{{ (states('sensor.soc_usableforcecharge') | float(0) / 3 * 1000 / 55) | round(0) }}"
   - sensor:
       - name: "Auto Charge Scheduled"
         unique_id: "auto_charge_scheduled"
