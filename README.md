@@ -33,8 +33,8 @@ INSTALLATION:
     - Battery Heat and Cooling Fans buttons will need to be linked to your own devices, if you have them.
 
 HA Credentials: 
-user: default_user
-password: abcde12345
+* user: default_user
+* password: abcde12345
 Please change these...
     
 Feedback welcomed!
