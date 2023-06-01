@@ -2,6 +2,8 @@
 
 This is the MINIMALIST version of the Automated Solar Charging Dashboard.  This contains only items which relate directly to the control of the Automations - so graphs, weather etc have been excluded.
 
+
+
 Paste the following directly into your HA overview.
 
 1. In overview (or your main HA view whatever that is called), click the 3 dots top right and "edit dashboard".
@@ -218,4 +220,3 @@ Paste the following directly into your HA overview.
               - entity: sensor.calculated_charge_current
                 name: Calculated Charge Current
 
-[Solax Modbus](https://github.com/wills106/homeassistant-solax-modbus)
