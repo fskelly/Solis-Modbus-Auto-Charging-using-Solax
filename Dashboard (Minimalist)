@@ -217,3 +217,5 @@ Paste the following directly into your HA overview.
                 name: System Capacity Above Forcecharge
               - entity: sensor.calculated_charge_current
                 name: Calculated Charge Current
+
+[Solax Modbus](https://github.com/wills106/homeassistant-solax-modbus)
