@@ -35,6 +35,6 @@ INSTALLATION:
 HA Credentials: 
 * user: default_user
 * password: abcde12345
-Please change these...
+* Please change these...
     
 Feedback welcomed!
