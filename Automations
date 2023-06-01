@@ -11,6 +11,128 @@ Copy below automations into your HA instance.
 4. Hit SAVE and name the automations EXACTLY as detailed on each automation's Line 1 after "alias:"
 
 ******************************************************************************************************
+alias: Flux - Discharge Cutout
+description: >-
+  Stops Flux battery discharging if the remaining SoC drops to 50% between the
+  hours of 16:00 and 19:00 with Flux discharging enabled
+trigger:
+  - platform: state
+    entity_id:
+      - sensor.solax_battery_soc
+    from: "51"
+    to: "50"
+condition:
+  - condition: time
+    after: "16:00:00"
+    before: "19:00:00"
+    weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
+      - sat
+      - sun
+  - condition: state
+    entity_id: input_boolean.flux_discharge
+    state: "on"
+action:
+  - service: input_boolean.turn_off
+    data: {}
+    target:
+      entity_id: input_boolean.flux_discharge
+mode: single
+******************************************************************************************************
+alias: Flux - Discharge Off
+description: >-
+  Sets the Battery to Not Discharge to the grid.  Both Solax discharge values
+  set to 16:00
+trigger:
+  - platform: state
+    entity_id:
+      - input_boolean.flux_discharge
+    from: "on"
+    to: "off"
+condition: []
+action:
+  - parallel:
+      - service: number.set_value
+        data:
+          value: "16"
+        target:
+          entity_id: number.solax_timed_discharge_start_hours
+      - service: number.set_value
+        data:
+          value: "0"
+        target:
+          entity_id: number.solax_timed_discharge_start_minutes
+      - service: number.set_value
+        data:
+          value: "16"
+        target:
+          entity_id: number.solax_timed_discharge_end_hours
+      - service: number.set_value
+        data:
+          value: "0"
+        target:
+          entity_id: number.solax_timed_discharge_end_minutes
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 2
+      milliseconds: 0
+  - service: button.press
+    data: {}
+    target:
+      entity_id:
+        - button.solax_update_charge_discharge_times
+mode: single
+******************************************************************************************************
+alias: Flux - Discharge On
+description: >-
+  Sets the Battery to Discharge to the grid at full power between 16:00 and
+  19:00
+trigger:
+  - platform: state
+    entity_id:
+      - input_boolean.flux_discharge
+    from: "off"
+    to: "on"
+condition: []
+action:
+  - parallel:
+      - service: number.set_value
+        data:
+          value: "16"
+        target:
+          entity_id: number.solax_timed_discharge_start_hours
+      - service: number.set_value
+        data:
+          value: "0"
+        target:
+          entity_id: number.solax_timed_discharge_start_minutes
+      - service: number.set_value
+        data:
+          value: "19"
+        target:
+          entity_id: number.solax_timed_discharge_end_hours
+      - service: number.set_value
+        data:
+          value: "0"
+        target:
+          entity_id: number.solax_timed_discharge_end_minutes
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 2
+      milliseconds: 0
+  - service: button.press
+    data: {}
+    target:
+      entity_id:
+        - button.solax_update_charge_discharge_times
+mode: single
+******************************************************************************************************
 alias: Solar - Battery Charge Automation
 description: Main automatic battery charging function
 trigger:
@@ -48,6 +170,25 @@ action:
     data: {}
     target:
       entity_id: button.solax_update_charge_discharge_times
+mode: single
+******************************************************************************************************
+alias: Solar - Charge Current Settings
+description: >-
+  This Automation automatically sets the Solax Timed Charge Current to match the
+  user inputs of battery capacity, overdischarge soc and forcecharge soc
+trigger:
+  - platform: state
+    entity_id:
+      - input_number.battery_capacity
+      - input_number.overdischarge_soc
+      - input_number.force_charge_soc
+condition: []
+action:
+  - service: number.set_value
+    data:
+      value: "{{ states('sensor.calculated_charge_current') }}"
+    target:
+      entity_id: number.solax_timed_charge_current
 mode: single
 ******************************************************************************************************
 alias: Solar - Expected Consumption Low State Tracker
