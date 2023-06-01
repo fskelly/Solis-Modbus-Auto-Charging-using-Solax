@@ -100,12 +100,18 @@ action:
     data:
       value: 0.23
     target:
-      entity_id: input_number.background_load
+      entity_id:
+        - input_number.base_load
   - service: input_number.set_value
     data:
       value: 0
     target:
       entity_id: input_number.boost_charge
+  - service: number.set_value
+    data:
+      value: "55"
+    target:
+      entity_id: number.solax_timed_charge_current
 mode: single
 ******************************************************************************************************
 alias: Solar - Update Times
