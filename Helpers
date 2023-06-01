@@ -7,15 +7,25 @@ You must create the following Helpers in HA.
 2. Use the 3rd line of each of the below to choose helpers (number or button).  Name them exactly the same as specified here.  Your max/min and step sizes will be dependant on your own needs, but can be left as default for now if you're not sure.
 
 ********************************************************************************************************************
-
-
-Background Load
-input_number.background_load
+Base Load
+input_number.base_load
 Number
+
+Battery Capacity
+input_number.battery_capacity
+Number
+
+Battery Heat
+input_button.battery_heat
+Button
 
 Boost Charge
 input_number.boost_charge
 Number
+
+Cooling Fans
+input_button.cooling_fans
+Button
 
 Expected Consumption
 input_number.expected_consumption
@@ -25,10 +35,18 @@ Expected Consumption Tomorrow
 input_number.expected_consumption_tomorrow
 Number
 
+Force Charge SoC
+input_number.force_charge_soc
+Number
+
+Overdischarge SoC
+input_number.overdischarge_soc
+Number
+
 Reset Consumption Defaults
 input_button.reset_consumption_defaults
 Button
 
-Trigger SoC
+Target Usable SoC
 input_number.target_usable_soc
 Number
