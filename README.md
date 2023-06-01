@@ -2,15 +2,13 @@
 
 Experimental code to transfer into your existing HA integration to support Automatic Battery Charging using Solax Modbus on a Solis inverter.  
 
-This code brings together a hardware integration fomulated by @Jumpy07 and software by @Jevburchell to automate your solar PV battery charging.  
+This code brings together a [hardware integration](https://github.com/Jumpy07/Solis---SolisCloud-and-Home-Assistant) fomulated by @Jumpy07 and software by @Jevburchell to automate your solar PV battery charging.  
 
-https://github.com/Jumpy07/Solis---SolisCloud-and-Home-Assistant/blob/main/README.md?fbclid=IwAR1A36MUN4-2RdS32RacsXdW2iAC5l51imUdrd5vLuUG15JsJTYAK58Y6Rs
-
-Four files exist here - code for your Home Assistant dashboard, code for Template Sensors (config.yaml), code for Automations and definitions for Helpers.  Instructions on where to copy & paste exist within each repo file.
+Five files exist here - code for your Home Assistant dashboard (full or minimalist variants), code for Template Sensors (config.yaml), code for Automations and definitions for Helpers.  Instructions on where to copy & paste exist within each repo file.
 
 You must install HACS integrations and frontend as specified in the repo files.
 
-Required HA integrations for this to work are Solax Modbus and Solcast (configured to your existing system).
+Required HA integrations for this to work are [Solax Modbus](https://github.com/wills106/homeassistant-solax-modbus) and [Solcast](https://toolkit.solcast.com.au/register/hobbyist) (configured to your existing system).
 
 Here is what the full [Dashboard](https://github.com/jevburchell/Solis-Modbus-Auto-Charging-using-Solax/blob/main/Dashboard) will look like:
 
@@ -30,9 +28,9 @@ INSTALLATION:
 4. Navigate to the .tar file and upload it
 5. The backup file will now appear in your HA list.  Double click on it, choose "full backup", then hit "Restore".  The process will install all code.
 6. You will need to alter a couple of settings to suit your own installation.  
-    - Solcast API Key
-    - Openweathermap API Key
-    - Solax integration settings (you must enter the correct IP address of your Modbus device which connects to your inverter)
+    - [Solcast](https://toolkit.solcast.com.au/register/hobbyist) API Key
+    - [Openweathermap](https://home.openweathermap.org/users/sign_up) API Key
+    - [Solax Integration](https://github.com/wills106/homeassistant-solax-modbus) settings (you must enter the correct IP address of your Modbus device which connects to your inverter)
     - Battery Heat and Cooling Fans buttons will need to be linked to your own devices, if you have them.
 
 HA Credentials: 
