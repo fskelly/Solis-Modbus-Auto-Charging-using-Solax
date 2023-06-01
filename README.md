@@ -12,9 +12,9 @@ You must install HACS integrations and frontend as specified in the repo files.
 
 Required HA integrations for this to work are Solax Modbus and Solcast (configured to your existing system).
 
-Here is what the full [Dashboard](https://github.com/jevburchell/Solis-Modbus-Auto-Charging-using-Solax/blob/main/Dashboard) will look like (nb some graph data missing in this screenshot due coding work):
+Here is what the full [Dashboard](https://github.com/jevburchell/Solis-Modbus-Auto-Charging-using-Solax/blob/main/Dashboard) will look like:
 
-![HA Export Dashboard](https://github.com/jevburchell/Solis-Modbus-Auto-Charging-using-Solax/assets/128035411/0e284912-03a1-4aca-8604-2e643d969eb3)
+![HA Export Dashboard2](https://github.com/jevburchell/Solis-Modbus-Auto-Charging-using-Solax/assets/128035411/451abbf0-af92-4203-b706-1d481615832e)
 
 And for those of you who already have your own dashboards setup, you can add the [Dashboard (Minimalist](https://github.com/jevburchell/Solis-Modbus-Auto-Charging-using-Solax/blob/main/Dashboard%20(Minimalist)) code to your existing pages.  It looks like this:
 
