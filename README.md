@@ -16,7 +16,7 @@ Here is what the full [Dashboard](https://github.com/jevburchell/Solis-Modbus-Au
 
 ![HA Export Dashboard2](https://github.com/jevburchell/Solis-Modbus-Auto-Charging-using-Solax/assets/128035411/451abbf0-af92-4203-b706-1d481615832e)
 
-And for those of you who already have your own dashboards setup, you can add the [Dashboard (Minimalist)](https://github.com/jevburchell/Solis-Modbus-Auto-Charging-using-Solax/blob/main/Dashboard%20(Minimalist)) code to your existing pages.  It looks like this:
+And for those of you who already have your own dashboards setup, you can add the [Dashboard (Minimalist)](https://github.com/jevburchell/Solis-Modbus-Auto-Charging-using-Solax/blob/main/Dashboard%20(Minimalist)) code to your existing pages.  The only cards in this code pack are the ones which directly control or display paramaters associated with Automatic Battery Charging.  These are the parts which can be added to your existing setup to take advantage of the power of this code without ending up with my full dashboard.  It looks like this:
 
 ![HA Minimalist Dashboard](https://github.com/jevburchell/Solis-Modbus-Auto-Charging-using-Solax/assets/128035411/7388e7b2-9a84-4611-a3ab-7f69d628d7d9)
 
