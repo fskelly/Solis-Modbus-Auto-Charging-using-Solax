@@ -6,7 +6,7 @@ Paste the following directly into your HA overview.
 
 2. Click the 3 dots top right again and choose "raw configuration editor"
 
-3. After "views:" on line 2, click there and hit return, then paste the code below into the new line
+3. After "views:" on line 1, click and hit return, then paste the code below into the new line
 
 4. Hit save, then X (top left) to exit
 
@@ -18,11 +18,12 @@ Paste the following directly into your HA overview.
 	e. Hourly Weather Card - http://homeassistant.local:8123/hacs/repository/499270202
 
 6. You must have "Solcast PV Solar" and "Solax Modbus" HACS Integrations installed and configured to your own system:
-	a. Solcast: http://homeassistant.local:8123/hacs/repository/409126039
-	b. Solax Modbus - http://homeassistant.local:8123/hacs/repository/394704821
+	a. Solcast
+	b. Solax Modbus
+
+7. Install Openweathermap integration from devices & services > add integration
 
 ********************************************************************************************************************
-
   - theme: minimalist-mobile
     title: Solar
     path: solar
@@ -63,15 +64,7 @@ Paste the following directly into your HA overview.
               - entity: sensor.solax_battery_soc
                 yaxis_id: first
                 name: SoC
-                color_threshold:
-                  - value: 80
-                    color: green
-                  - value: 65
-                    color: yellow
-                  - value: 50
-                    color: orange
-                  - value: 25
-                    color: red
+                color: yellow
                 stroke_width: 1
                 extend_to: now
               - entity: sensor.solax_battery_charge_today
@@ -103,21 +96,19 @@ Paste the following directly into your HA overview.
                 type: button
                 tap_action:
                   action: toggle
-                entity: automation.battery_charge_automation
-                show_state: true
-                icon: mdi:battery-charging-40
+                entity: button.solax_sync_rtc
                 icon_height: 20px
-                name: Auto Charge
+                name: Sync RTC
               - show_name: true
                 show_icon: true
                 type: button
                 tap_action:
                   action: toggle
-                entity: input_boolean.gmt_bst_toggle
+                entity: automation.solar_battery_charge_automation
                 show_state: true
-                icon: mdi:sun-clock
+                icon: mdi:battery-charging-40
                 icon_height: 20px
-                name: BST
+                name: Auto Charge
               - show_name: true
                 show_icon: true
                 type: button
@@ -132,6 +123,7 @@ Paste the following directly into your HA overview.
                     entity_id: automation.solar_update_times
                   data:
                     skip_condition: false
+                icon: mdi:clock-time-eight-outline
             columns: 4
           - square: false
             type: grid
@@ -167,12 +159,18 @@ Paste the following directly into your HA overview.
                 show_state: true
                 type: glance
                 entities:
+                  - entity: sensor.forecast_remaining_today
+                    name: Solcast Rem Today
+                  - entity: sensor.forecast_tomorrow
+                    name: Solcast Tomorrow
                   - entity: sensor.soc_usable_kwh
-                    name: Usable SoC
+                    name: Usable SoC Now
                   - entity: sensor.remaining_consumption_today
                     name: Usage Left Today
                   - entity: sensor.soc_required_charge
                     name: Auto Charge
+                  - entity: sensor.battery_charge_power
+                    name: Charge Power
                   - entity: sensor.soc_charge_time_hhmm
                     name: Total Charge Time
                   - entity: sensor.charge_start_time
@@ -187,25 +185,31 @@ Paste the following directly into your HA overview.
               - type: custom:mushroom-number-card
                 entity: input_number.boost_charge
                 icon_type: none
-                layout: horizontal
+                layout: vertical
                 display_mode: buttons
               - type: custom:mushroom-number-card
-                entity: input_number.background_load
-                layout: horizontal
+                entity: input_number.base_load
+                layout: vertical
                 fill_container: false
                 icon_type: none
                 display_mode: slider
                 name: Base Load
-            columns: 2
+              - type: custom:mushroom-number-card
+                entity: number.solax_timed_charge_current
+                icon_type: none
+                name: Charge Current
+                fill_container: false
+            columns: 3
           - type: entities
             entities:
               - entity: sensor.auto_charge_scheduled
                 name: Auto Charge Status
               - entity: sensor.soc_at_start_of_offpeak_tonight
+                name: SoC at Start of Offpeak Tonight (2am)
               - entity: sensor.soc_at_end_of_offpeak_tonight_with_charge
-                name: Soc at End of Offpeak Tonight
+                name: Soc at End of Offpeak Tonight (5am)
               - entity: sensor.soc_at_start_of_offpeak_tomorrow_display
-                name: Soc at Start of Offpeak Tomorrow
+                name: Soc at Start of Offpeak Tomorrow (2am +1)
             show_header_toggle: true
       - square: false
         columns: 1
@@ -310,11 +314,9 @@ Paste the following directly into your HA overview.
                 type: button
                 tap_action:
                   action: toggle
-                name: Cooling Fans
-                icon: mdi:fan
-                icon_height: 20px
-                show_state: true
-                entity: switch.tapo_1
+                entity: input_button.cooling_fans
+                show_state: false
+                icon_height: 40px
             columns: 3
           - square: false
             type: grid
@@ -324,9 +326,7 @@ Paste the following directly into your HA overview.
                 type: button
                 tap_action:
                   action: toggle
-                entity: switch.kasa_smart_plug_1
-                name: Battery Heat
-                show_state: true
+                entity: input_button.battery_heat
                 icon_height: 20px
               - type: custom:mushroom-entity-card
                 entity: sensor.openweathermap_temperature
@@ -352,23 +352,46 @@ Paste the following directly into your HA overview.
             show_state: true
             type: glance
             entities:
-              - entity: sensor.solcast_forecast_remaining_today
-                name: Rem Today
-              - entity: sensor.solcast_forecast_tomorrow
-                name: Tomorrow
-              - entity: sensor.solcast_forecast_d3
-                name: D3
-              - entity: sensor.solcast_forecast_d4
-                name: D4
-              - entity: sensor.solcast_forecast_d5
-                name: D5
-              - entity: sensor.solcast_forecast_d6
-                name: D6
-              - entity: sensor.solcast_api_last_polled
+              - entity: sensor.forecast_d3
+                name: Solcast Day 3
+              - entity: sensor.forecast_d4
+                name: Solcast Day 4
+              - entity: sensor.forecast_d5
+                name: Solcast Day 5
+              - entity: sensor.forecast_d6
+                name: Solcast Day 6
+              - entity: sensor.api_last_polled
                 name: API Polled
-              - entity: sensor.solcast_api_used
+              - entity: sensor.api_used
                 name: API Used
-            columns: 4
+            columns: 3
+          - square: false
+            type: grid
+            cards:
+              - type: custom:mushroom-number-card
+                entity: input_number.battery_capacity
+                display_mode: buttons
+                fill_container: false
+                icon_type: none
+              - type: custom:mushroom-number-card
+                entity: input_number.overdischarge_soc
+                display_mode: buttons
+                icon_type: none
+                name: Overdischarge SoC
+              - type: custom:mushroom-number-card
+                entity: input_number.force_charge_soc
+                display_mode: buttons
+                icon_type: none
+                name: Forcecharge SoC
+            columns: 3
+          - type: entities
+            entities:
+              - entity: sensor.soc_total_usable
+                name: Useful System Capacity
+              - entity: sensor.soc_usableforcecharge
+                name: System Capacity Above Forcecharge
+              - entity: sensor.suggested_charge_power
+                name: Suggested Charge Power
       - square: false
         columns: 1
         type: grid
@@ -422,3 +445,218 @@ Paste the following directly into your HA overview.
               dusk: true
               noon: true
         columns: 1
+  - title: Solax
+    path: solax
+    icon: mdi:solar-panel-large
+    badges: []
+    cards:
+      - type: entities
+        entities:
+          - entity: sensor.solax_active_power
+            name: Active Power
+          - entity: sensor.solax_apparent_power
+            name: Apparent Power
+          - entity: sensor.solax_battery_charge_today
+            name: Battery Charge Today
+          - entity: sensor.solax_battery_charge_yesterday
+            name: Battery Charge Yesterday
+          - entity: sensor.solax_battery_current
+            name: Battery Current
+          - entity: sensor.solax_battery_discharge_today
+            name: Battery Discharge Today
+          - entity: sensor.solax_battery_discharge_yesterday
+            name: Battery Discharge Yesterday
+          - entity: sensor.solax_battery_input_energy
+            name: Battery Input Energy
+          - entity: sensor.solax_battery_output_energy
+            name: Battery Output Energy
+          - entity: sensor.solax_battery_voltage
+            name: Battery Voltage
+          - entity: sensor.solax_bms_battery_charge_limit
+            name: BMS Battery Charge Limit
+          - entity: sensor.solax_bms_battery_current
+            name: BMS Battery Current
+          - entity: sensor.solax_bms_battery_discharge_limit
+            name: BMS Battery Discharge Limit
+          - entity: sensor.solax_bms_battery_voltage
+            name: BMS Battery Voltage
+          - entity: sensor.solax_bypass_load
+            name: Bypass Load
+          - entity: sensor.solax_energy_storage_control_switch
+            name: Energy Storage Control Switch
+          - entity: sensor.solax_grid_export_today
+            name: Grid Export Today
+          - entity: sensor.solax_grid_import_today
+            name: Grid Import Today
+          - entity: sensor.solax_house_load
+            name: House Load
+          - entity: sensor.solax_house_load_today
+            name: House Load Today
+          - entity: sensor.solax_house_load_total
+            name: House Load Total
+          - entity: sensor.solax_house_load_yesterday
+            name: House Load Yesterday
+          - entity: sensor.solax_inverter_current
+            name: Inverter Current
+          - entity: sensor.solax_inverter_frequency
+            name: Inverter Frequency
+          - entity: sensor.solax_inverter_status
+            name: Inverter Status
+          - entity: sensor.solax_inverter_voltage
+            name: Inverter Voltage
+          - entity: sensor.solax_meter_ac_current
+            name: Meter AC Current
+          - entity: sensor.solax_meter_ac_voltage
+            name: Meter AC Voltage
+          - entity: sensor.solax_meter_active_power
+            name: Meter Active Power
+          - entity: sensor.solax_meter_active_power_total
+            name: Meter Active Power Total
+          - entity: sensor.solax_meter_apparent_power
+            name: Meter Apparent Power
+          - entity: sensor.solax_meter_apparent_power_total
+            name: Meter Apparent Power Total
+          - entity: sensor.solax_meter_current
+            name: Meter Current
+          - entity: sensor.solax_meter_grid_export_total
+            name: Meter Grid Export Total
+          - entity: sensor.solax_meter_grid_frequency
+            name: Meter Grid Frequency
+          - entity: sensor.solax_meter_grid_import_total
+            name: Meter Grid Import Total
+          - entity: sensor.solax_meter_power_factor
+            name: Meter Power Factor
+          - entity: sensor.solax_meter_reactive_power
+            name: Meter Reactive Power
+          - entity: sensor.solax_meter_reactive_power_total
+            name: Meter Reactive Power Total
+          - entity: sensor.solax_meter_total_activepower
+            name: Meter Total ActivePower
+          - entity: sensor.solax_meter_voltage
+            name: Meter Voltage
+          - entity: sensor.solax_power_generation_last_month
+            name: Power Generation Last Month
+          - entity: sensor.solax_power_generation_last_year
+            name: Power Generation Last Year
+          - entity: sensor.solax_power_generation_this_month
+            name: Power Generation This Month
+          - entity: sensor.solax_power_generation_this_year
+            name: Power Generation This Year
+          - entity: sensor.solax_power_generation_today
+            name: Power Generation Today
+          - entity: sensor.solax_power_generation_total
+            name: Power Generation Total
+          - entity: sensor.solax_power_generation_yesterday
+            name: Power Generation Yesterday
+          - entity: sensor.solax_pv_current_1
+            name: PV Current 1
+          - entity: sensor.solax_pv_current_2
+            name: PV Current 2
+          - entity: sensor.solax_pv_total_power
+            name: PV Total Power
+          - entity: sensor.solax_pv_voltage_1
+            name: PV Voltage 1
+          - entity: sensor.solax_pv_voltage_2
+            name: PV Voltage 2
+          - entity: sensor.solax_reactive_power
+            name: Reactive Power
+          - entity: sensor.solax_total_battery_charge
+            name: Total Battery Charge
+          - entity: sensor.solax_total_battery_discharge
+            name: Total Battery Discharge
+        title: Solax
+      - type: entities
+        entities:
+          - entity: number.solax_backflow_power
+            name: Backflow Power
+          - entity: number.solax_battery_charge_current
+            name: Battery Charge Current
+          - entity: number.solax_battery_chargedischarge_current
+            name: Battery ChargeDischarge Current
+          - entity: number.solax_battery_discharge_current
+            name: Battery Discharge Current
+          - entity: number.solax_timed_charge_current
+            name: Timed Charge Current
+          - entity: number.solax_timed_charge_end_hours
+            name: Timed Charge End Hours
+          - entity: number.solax_timed_charge_end_hours_2
+            name: Timed Charge End Hours 2
+          - entity: number.solax_timed_charge_end_hours_3
+            name: Timed Charge End Hours 3
+          - entity: number.solax_timed_charge_end_minutes
+            name: Timed Charge End Minutes
+          - entity: number.solax_timed_charge_end_minutes_2
+            name: Timed Charge End Minutes 2
+          - entity: number.solax_timed_charge_end_minutes_3
+            name: Timed Charge End Minutes 3
+          - entity: number.solax_timed_charge_start_hours
+            name: Timed Charge Start Hours
+          - entity: number.solax_timed_charge_start_hours_2
+            name: Timed Charge Start Hours 2
+          - entity: number.solax_timed_charge_start_hours_3
+            name: Timed Charge Start Hours 3
+          - entity: number.solax_timed_charge_start_minutes
+            name: Timed Charge Start Minutes
+          - entity: number.solax_timed_charge_start_minutes_2
+            name: Timed Charge Start Minutes 2
+          - entity: number.solax_timed_charge_start_minutes_3
+            name: Timed Charge Start Minutes 3
+          - entity: number.solax_timed_discharge_current
+            name: Timed Discharge Current
+          - entity: number.solax_timed_discharge_end_hours
+            name: Timed Discharge End Hours
+          - entity: number.solax_timed_discharge_end_hours_2
+            name: Timed Discharge End Hours 2
+          - entity: number.solax_timed_discharge_end_hours_3
+            name: Timed Discharge End Hours 3
+          - entity: number.solax_timed_discharge_end_minutes
+            name: Timed Discharge End Minutes
+          - entity: number.solax_timed_discharge_end_minutes_2
+            name: Timed Discharge End Minutes 2
+          - entity: number.solax_timed_discharge_end_minutes_3
+            name: Timed Discharge End Minutes 3
+          - entity: number.solax_timed_discharge_start_hours
+            name: Timed Discharge Start Hours
+          - entity: number.solax_timed_discharge_start_hours_2
+            name: Timed Discharge Start Hours 2
+          - entity: number.solax_timed_discharge_start_hours_3
+            name: Timed Discharge Start Hours 3
+          - entity: number.solax_timed_discharge_start_minutes
+            name: Timed Discharge Start Minutes
+          - entity: number.solax_timed_discharge_start_minutes_2
+            name: Timed Discharge Start Minutes 2
+          - entity: number.solax_timed_discharge_start_minutes_3
+            name: Timed Discharge Start Minutes 3
+          - entity: sensor.solax_backflow_power
+            name: Backflow Power
+          - entity: sensor.solax_timed_discharge_end_minutes
+            name: Timed Discharge End Minutes
+        title: Solax
+      - type: entities
+        entities:
+          - entity: sensor.solax_battery_soh
+            name: Battery SOH
+          - entity: sensor.solax_inverter_temperature
+            name: Inverter Temperature
+        title: Solax
+      - type: entities
+        entities:
+          - entity: select.solax_backflow_power_switch
+            name: Backflow Power Switch
+          - entity: number.solax_backup_mode_soc
+            name: Backup Mode SOC
+          - entity: number.solax_battery_minimum_soc
+            name: Battery Minimum SOC
+          - entity: select.solax_energy_storage_control_switch
+            name: Energy Storage Control Switch
+          - entity: select.solax_power_switch
+            name: Power Switch
+          - entity: button.solax_sync_rtc
+            name: Sync RTC
+          - entity: button.solax_update_charge_discharge_times
+            name: Update Charge/Discharge Times
+          - entity: button.solax_update_charge_discharge_times_2
+            name: Update Charge/Discharge Times 2
+          - entity: button.solax_update_charge_discharge_times_3
+            name: Update Charge/Discharge Times 3
+        title: Solax
