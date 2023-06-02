@@ -43,27 +43,27 @@ Split into three sections in the dashboard is your live solar data, taken direct
 ### Main Controls
 
 Under Construction
-<img src="Images/Main Controls.png" width="500">
+<img src="Images/Main Controls.png" width="400">
 
 ### Auto Charge Status
 
 Under Construction
-<img src="Images/Auto Charge Status.png" width="800">
+<img src="Images/Auto Charge Status.png" width="400">
 
 ### Inverter Stats & Future Solcast Data
 
 Under Construction
-<img src="Images/Inverter Stats.png" width="800">
+<img src="Images/Inverter Stats.png" width="400">
 
 ### Battery Config
 
 Under Construction
-<img src="Images/Battery Config.png" width="800">
+<img src="Images/Battery Config.png" width="400">
 
 ### Weather Data
 
 Under Construction
-<img src="Images/Weather Data.png" width="800">
+<img src="Images/Weather Data.png" width="400">
 
 
 
