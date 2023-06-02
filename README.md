@@ -48,6 +48,8 @@ Split into three sections in the dashboard is your live solar data, taken direct
 <img src="Images/Main Controls.png" width="400">
 This is the heart of the UI to control your Automatic Battery Charging.  The controls here are simple, yet feed data to the charge logic to make a relatively complex decision about whether to charge your batteries.  And if so, by how much.  Each control and display parameter does the following:
 
+-----
+
 * Restore Defaults (Button) - Returns your Expected Usage Numbers, Target SoC, Boost Charge, Base Load and Charge Current to their default values - which are chosen by you in the Automation "Solar - Restore Consumption Defaults".  My numbers will be different to yours, but may be a good starting point.
 
 * Flux Discharge (Button) - This is for us Octopus Flux customers who may want to discharge the battery to the grid between 16:00 and 19:00 on the peak rate.  This boolean control sets an automation to set those times, or to cancel those times.  Another Automation also cuts off the discharge if battery SoC drops below 50% during the Flux discharge - edit or delete this if you wish.
@@ -59,26 +61,47 @@ This is the heart of the UI to control your Automatic Battery Charging.  The con
 -----
 
 * Usage Today (Input Number) - Allows you to alter your expected consumption for today.  This is fed into the algorithm to calculate charge.  An automation "Solar - Expected Consumption Low State Tracker" also notices if your actual consumption exceeds this number, and increases it to follow in real time.  Also at 23:55, when the "Solar - Battery Charge Automation" runs, it automatically syncs the two to ensure no anomailies in the charge calculation.
+
 * Usage Tomorrow (Input Number) - Allows you to alter your expected consumption for tomorrow.  This is fed into the algorithm to calculate charge. 
+
 * Target SoC (Input Number) - Allows you to set your Target SoC (in kWh) that your battery will have at the start of the Offpeak period not tomorrow, but the next day. This is fed into the algorithm to calculate charge. 
+
 -----
+
 * Solcast Rem Today (Sensor) - The remaining expected output of your solar system for the remainder of today.
+
 * Solcast Tomorrow (Sensor) - Solcast Forecast for Tomorrow.
+
 * Usable SoC Now (Template Sensor) - How much charge is left in your battery in kWh.  This is calculated by taking the full capacity of your battery and subtracting your Overdischarge Soc; that leaves the useful amount of capacity before your battery goes into trickle discharge.  The *remainder* of this amount is your 'Usable SoC Now'.
+
 * Usage Left Today (Template Sensor) - Your Usage Today minus your actual Daily House Load.  Essentially how many kWh you have left to burn before midnight.
+
 * Auto Charge (Template Sensor) - Shows the calculated amount of Automatic Battery Charging that the system is planning on adding.  Changes dynamically as input numbers and sensors feed variable data into the algorithm.
+
 * Charge Power (Template Sensor) - The calculated Wattage that the algorithm uses to charge your batteries.  This is worked out using the Battry Config section below, and/or manually controlled using the "Charge Current" Input Number below.  Calculated at 55v - you may alter this in configuration.yaml if you wish.
+
 * Total Charge Time (Template Sensor) - Calculated amount of charge time.  Shows Auto charge time in Auto mode or your own configured charge time in Manual mode.
+
 * Charge Start (Template Sensor) - The time battery charging will start.  This is manually controlled from the Solax Integration, as you might be on a different Tariff which starts at something other than 2am.  Note that the minutes will only show 2 digits if it shows 10 or above; just a quirk of making this work with Solax.
+
 * Charge End (Template Sensor) - The charge start time + the total charge time = the charge end time.
+
 -----
+
 * Boost Charge (Input Number) - No matter what auto charge or manual charge you have set, boost charge simply adds an amount on to it.  So if auto charge calculates it wants to add 3kWh and you want 4, then add 1 kWh of charge from the Boost Charge control.  Easy.
+
 * Base Load (Input Number) - The amount of base load / background load your house uses.  Think when you're all asleep and everything is on standby.  Might seem frivolous, but it's an important part of calculating charge as accurately as possible.
+
 * Charge Current (Input Number) - You can manually control this, but it is set automatically by Battery Config section below.  It directly controls the rate at which your batteries will charge.
+
 -----
+
 * Auto Charge Status (Template Sensor) - Uses ifelse statement to show either "Charge Scheduled" or "Not Required".
+
 * SoC at Start of Offpeak Tonight 2am (Template Sensor) - Shows the Battery SoC at the beginning of tonight's Offpeak period.  
+
 * SoC at End of Offpeak Tonight 5am (Template Sensor) - Shows the Battery SoC at the end of tonight's Offpeak period.  
+
 * SoC at Start of Offpeak Tomorrow 2am (Template Sensor) - Shows the Battery SoC at the beginning of tomorrow night's Offpeak period.  
 
 
