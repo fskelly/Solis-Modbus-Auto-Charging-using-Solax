@@ -10,7 +10,8 @@ Copy below automations into your HA instance.
 
 4. Hit SAVE and allow the automations to be named EXACTLY as detailed on each automation's Line 1 after "alias:".  This should happen automatically for you.
 
-## Code
+## Automation Code
+
 
 Flux - Discharge Cutout
 ```
@@ -46,6 +47,7 @@ action:
       entity_id: input_boolean.flux_discharge
 mode: single
 ```
+
 
 Flux - Discharge Off
 ```
@@ -95,6 +97,7 @@ action:
 mode: single
 ```
 
+
 Flux - Discharge On
 ```
 alias: Flux - Discharge On
@@ -143,6 +146,7 @@ action:
 mode: single
 ```
 
+
 Solar - Battery Charge Automation
 ```
 alias: Solar - Battery Charge Automation
@@ -185,6 +189,7 @@ action:
 mode: single
 ```
 
+
 Solar - Charge Current Settings
 ```
 alias: Solar - Charge Current Settings
@@ -206,6 +211,7 @@ action:
       entity_id: number.solax_timed_charge_current
 mode: single
 ```
+
 
 Solar - Expected Consumption Low State Tracker
 ```
@@ -230,6 +236,7 @@ action:
       entity_id: input_number.expected_consumption
 mode: single
 ```
+
 
 Solar - Restore Consumption Defaults
 ```
@@ -277,6 +284,7 @@ action:
 mode: single
 ```
 
+
 Solar - Update Times
 ```
 alias: Solar - Update Times
@@ -309,6 +317,7 @@ action:
         - button.solax_update_charge_discharge_times
 mode: single
 ```
+
 
 Solcast - API Poll Schedule
 ```
