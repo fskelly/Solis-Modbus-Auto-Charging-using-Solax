@@ -14,9 +14,7 @@ Required HA integrations for this to work are [Solax Modbus](https://github.com/
 
 Here is what the full [Dashboard](https://github.com/jevburchell/Solis-Modbus-Auto-Charging-using-Solax/blob/main/Dashboard%20(Full).md) will look like:
 
-![HA Export Dashboard2](https://github.com/jevburchell/Solis-Modbus-Auto-Charging-using-Solax/assets/128035411/451abbf0-af92-4203-b706-1d481615832e)
-<img src="Images/HA Full Dashboard.png" width="100">
-
+<img src="Images/HA Full Dashboard.png">
 
 And for those of you who already have your own dashboards setup, you can add the [Dashboard (Minimalist)](https://github.com/jevburchell/Solis-Modbus-Auto-Charging-using-Solax/blob/main/Dashboard%20(Minimalist)) code to your existing pages.  The only cards in this code pack are the ones which directly control or display paramaters associated with Automatic Battery Charging.  These are the parts which can be added to your existing setup to take advantage of the power of this code without ending up with my full dashboard.  It looks like this:
 
