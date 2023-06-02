@@ -13,7 +13,7 @@ Copy below automations into your HA instance.
 ## Automation Code
 
 
-Flux - Discharge Cutout
+###Flux - Discharge Cutout
 ```
 alias: Flux - Discharge Cutout
 description: >-
