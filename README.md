@@ -33,7 +33,7 @@ Alternatively, for those of you who are starting fresh with Home Assistant, you 
 
 ### Solar Data
 
-![Solar Data](https://github.com/jevburchell/Solis-Modbus-Auto-Charging-using-Solax/assets/128035411/ede6bfcb-1e71-4cf8-a229-278d12e3c3ca)
+<img src="Images/Solar Data.png" width="800">
 
 Split into three sections in the dashboard is your live solar data, taken directly from your inverter using your Modbus interface and polled into Home Assistant at whatever rate you set using the Solax Integration.  I find 30 seconds works well and displays nicely in the graphs without using up too much disk space on my instance, and is not too processor-intensive.  Colours can be chosen to suit your needs easily.  Graphs are drawn using Apex Charts.
 * Battery - Soc, Daily Charge Amount and Daily Discharge Amount.
