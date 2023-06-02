@@ -18,8 +18,10 @@ Paste the following directly into your HA overview.
 	* [Hourly Weather Card](http://homeassistant.local:8123/hacs/repository/499270202)
 
 6. You must have "Solcast PV Solar" and "Solax Modbus" HACS Integrations installed and configured to your own system
-	* [Solcast](https://github.com/oziee/ha-solcast-solar) note: I find that hitting the code button and downloading the sip has more success with install.
+	* [Solcast](https://github.com/oziee/ha-solcast-solar) note: I find that hitting the code button and downloading the zip file has more success with installation.
+	* The naming convention used with this integration is important.  By default, sensors should present as, for example: "sensor.forecast_tomorrow".  When adding this integration, ensure that no changes are made to the naming convention to preserve functionality in this code pack.
 	* [Solax Modbus](https://github.com/wills106/homeassistant-solax-modbus)
+	* The naming convention used with this integration is important.  By default, sensors should present as, for example: "sensor.solax_house_load".  When adding this integration, ensure that no changes are made to the naming convention to preserve functionality in this code pack.
 
 7. Install Openweathermap integration from devices & services > add integration
 
