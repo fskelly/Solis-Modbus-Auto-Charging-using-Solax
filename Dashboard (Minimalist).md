@@ -20,6 +20,8 @@ Paste the following directly into your HA overview.
 	* [Solcast](https://github.com/oziee/ha-solcast-solar) note: I find that hitting the code button and downloading the sip has more success with install.
 	* [Solax Modbus](https://github.com/wills106/homeassistant-solax-modbus)
 
+
+## Dashboard (Minimalist) Code
 ```
   - title: Minimalist
     path: minimalist
