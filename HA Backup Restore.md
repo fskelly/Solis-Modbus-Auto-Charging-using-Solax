@@ -19,4 +19,4 @@ HA Credentials:
 
 ## .tar File
 
-<Images/HA Solis Solax Automation Backup 1.6.23.tar>
+[Download Here](https://github.com/jevburchell/Solis-Modbus-Auto-Charging-using-Solax/blob/main/Images/HA%20Solis%20Solax%20Automation%20Backup%201.6.23.tar)
