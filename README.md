@@ -113,7 +113,16 @@ This is the heart of the UI to control your Automatic Battery Charging.  The con
 <img src="Images/Inverter Stats.png" width="400">
 
 * Gauges to show live inverter stats:
-  * today's Yield (kWh), Battery Charge Power (W), Battery Discharge Power (W), Import Export Power (W)
+  * today's Yield (kWh)
+  * Battery Charge Power (W)
+  * Battery Discharge Power (W)
+  * Import Export Power (W)
+  * Inverter Temperature (C)
+
+* Cooling Fans Button - Note that this will be unconfigured when you import this code into your system.  You will need to set this up to control your fans (or delete if you don't have any)
+
+---
+Under Construction
 
 
 ### Battery Config
