@@ -106,7 +106,7 @@ This is the heart of the UI to control your Automatic Battery Charging.  The con
 
 * SoC at Start of Offpeak Tomorrow 2am (Template Sensor) - Shows the Battery SoC at the beginning of tomorrow night's Offpeak period.  
 
-
+-----
 ### Inverter Stats & Future Solcast Data
 
 <img src="Images/Inverter Stats.png" width="400">
@@ -120,20 +120,20 @@ This is the heart of the UI to control your Automatic Battery Charging.  The con
 
 * Cooling Fans Button - Note that this will be unconfigured when you import this code into your system.  You will need to set this up to control your fans (or delete if you don't have any)
 
----
+
 Under Construction
 
-
+-----
 ### Battery Config
 
 <img src="Images/Battery Config.png" width="400">
 Under Construction
 
-
+-----
 ### Weather Data
 
 <img src="Images/Weather Data.png" width="400">
 Under Construction
 
-
+-----
 Feedback welcomed in the [Discussions Section](https://github.com/jevburchell/Solis-Modbus-Auto-Charging-using-Solax/discussions)
