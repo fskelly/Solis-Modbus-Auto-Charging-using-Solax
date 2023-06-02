@@ -135,18 +135,6 @@ This is the heart of the UI to control your Automatic Battery Charging.  The con
 * Flux Discharge End (Number) - The time in 24h format when the Flux Battery Discharge is set to finish.  This is controlled by two automations which alter the end time from 16:00 to 19:00.
 
 -----
-
-<img src="Images/Inverter Stats 3.png" width="500">
-
-* Battery Heat Button - Note that this will be unconfigured when you import this code into your system.  You will need to set this up to control your battery heater (or delete if you don't have one).
-
-* OAT (Sensor) - Outside Air Temperature (useful for automating battery heat if you don't have a temperature sensor on the batteries themselves).
-
-* Chrg Limit (Sensor) - Battery Charge Limit from your BMS via Solax.
-
-* Disch Limit (Sensor) - Battery Discharge Limit from your BMS via Solax.
-
------
 ### Battery Config
 
 This is a very important section and contributes a key element to the algorithm.  As Solar customers with differing installations, we have different size battery packs and have alterations in our settings depending on how deep we dare discharge our batteries.  These 3 elements have a direct impact on our useful amount of battery storage in kWh, and thus how fast we need to charge those batteries in a given charge window.  
@@ -170,6 +158,19 @@ As an example, with my 10kWh battery and a Force Charge SoC set at 10%, the maxi
 * Calculated Charge Current (Template Sensor) - using the above variables, a charge current is calculated and displayed here.  An automation "Solar - Charge Current Settings" also runs in the background so that this figure is updated and sent to the inverter in real-time whenever any of the Battery Config settings are altered.
 
 -----
+
+<img src="Images/Inverter Stats 3.png" width="500">
+
+* Battery Heat Button - Note that this will be unconfigured when you import this code into your system.  You will need to set this up to control your battery heater (or delete if you don't have one).
+
+* OAT (Sensor) - Outside Air Temperature (useful for automating battery heat if you don't have a temperature sensor on the batteries themselves).
+
+* Chrg Limit (Sensor) - Battery Charge Limit from your BMS via Solax.
+
+* Disch Limit (Sensor) - Battery Discharge Limit from your BMS via Solax.
+
+-----
+
 ### Weather Data
 
 <img src="Images/Weather Data.png" width="500">
