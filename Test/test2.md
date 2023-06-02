@@ -2,7 +2,7 @@ Paste the following directly into your Configuration.yaml file
 
 1. In File Editor, navigate to Configuration.yaml
 
-2. If you have template sensors setup already, paste the following underneath "template:".  If not, you need to write "template:" on a new line, and paste the following underneath:
+2. If you already have any template sensors setup, simply paste the following underneath "template:".  If you have not yet set up any template sensors, you need to type "template:" on a new line in configuration.yaml, and paste the following underneath:
 
 ```
 ##Charge Calculators
