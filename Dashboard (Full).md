@@ -168,9 +168,9 @@ Note: Solcast and Openweathermap require you to set up and use your own API Keys
                 show_state: true
                 type: glance
                 entities:
-                  - entity: sensor.forecast_remaining_today
+                  - entity: sensor.solcast_forecast_remaining_today
                     name: Solcast Rem Today
-                  - entity: sensor.forecast_tomorrow
+                  - entity: sensor.solcast_forecast_tomorrow
                     name: Solcast Tomorrow
                   - entity: sensor.soc_usable_kwh
                     name: Usable SoC Now
@@ -332,13 +332,13 @@ Note: Solcast and Openweathermap require you to set up and use your own API Keys
             show_state: true
             type: glance
             entities:
-              - entity: sensor.forecast_d3
+              - entity: sensor.solcast_forecast_d3
                 name: Solcast Day 3
-              - entity: sensor.forecast_d4
+              - entity: sensor.solcast_forecast_d4
                 name: Solcast Day 4
-              - entity: sensor.forecast_d5
+              - entity: sensor.solcast_forecast_d5
                 name: Solcast Day 5
-              - entity: sensor.forecast_d6
+              - entity: sensor.solcast_forecast_d6
                 name: Solcast Day 6
               - entity: sensor.api_last_polled
                 name: API Polled
