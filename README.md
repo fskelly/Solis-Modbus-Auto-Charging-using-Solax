@@ -94,7 +94,10 @@ This is the heart of the UI to control your Automatic Battery Charging.  The con
 
 * Charge Current (Input Number) - You can manually control this, but it is set automatically by Battery Config section below.  It directly controls the rate at which your batteries will charge.
 
------
+
+### Auto Charge Status
+
+<img src="Images/Auto Charge Status.png" width="400">
 
 * Auto Charge Status (Template Sensor) - Uses ifelse statement to show either "Charge Scheduled" or "Not Required".
 
@@ -103,12 +106,6 @@ This is the heart of the UI to control your Automatic Battery Charging.  The con
 * SoC at End of Offpeak Tonight 5am (Template Sensor) - Shows the Battery SoC at the end of tonight's Offpeak period.  
 
 * SoC at Start of Offpeak Tomorrow 2am (Template Sensor) - Shows the Battery SoC at the beginning of tomorrow night's Offpeak period.  
-
-
-### Auto Charge Status
-
-<img src="Images/Auto Charge Status.png" width="400">
-Under Construction
 
 
 ### Inverter Stats & Future Solcast Data
