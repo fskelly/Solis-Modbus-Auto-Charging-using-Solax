@@ -30,7 +30,7 @@ Alternatively, for those of you who are starting fresh with Home Assistant, you 
 
 
 # User Guide
-
+## UI
 ### Solar Data
 
 <img src="Images/Solar Data.png">
