@@ -1,6 +1,6 @@
 # Installation
 
-1. Download the above .tar file (click Raw in the linked page if it doesn't auto download)
+1. Download the below .tar file (click Raw in the linked page if it doesn't auto download)
 2. In Home Assistant, go to Settings > System > Backups
 3. Hit the three dots top right and choose "Upload Backup"
 4. Navigate to the .tar file and upload it
@@ -16,3 +16,6 @@ HA Credentials:
 * user: default_user
 * password: abcde12345
 * Please change these...
+
+## .tar File
+
