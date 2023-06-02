@@ -49,7 +49,7 @@ mode: single
 ```
 
 
-Flux - Discharge Off
+### Flux - Discharge Off
 ```
 alias: Flux - Discharge Off
 description: >-
@@ -98,7 +98,7 @@ mode: single
 ```
 
 
-Flux - Discharge On
+### Flux - Discharge On
 ```
 alias: Flux - Discharge On
 description: >-
@@ -147,7 +147,7 @@ mode: single
 ```
 
 
-Solar - Battery Charge Automation
+### Solar - Battery Charge Automation
 ```
 alias: Solar - Battery Charge Automation
 description: Main automatic battery charging function
@@ -190,7 +190,7 @@ mode: single
 ```
 
 
-Solar - Charge Current Settings
+### Solar - Charge Current Settings
 ```
 alias: Solar - Charge Current Settings
 description: >-
@@ -213,7 +213,7 @@ mode: single
 ```
 
 
-Solar - Expected Consumption Low State Tracker
+### Solar - Expected Consumption Low State Tracker
 ```
 alias: Solar - Expected Consumption Low State Tracker
 description: >-
@@ -238,7 +238,7 @@ mode: single
 ```
 
 
-Solar - Restore Consumption Defaults
+### Solar - Restore Consumption Defaults
 ```
 alias: Solar - Restore Consumption Defaults
 description: >-
@@ -285,7 +285,7 @@ mode: single
 ```
 
 
-Solar - Update Times
+### Solar - Update Times
 ```
 alias: Solar - Update Times
 description: >-
@@ -319,7 +319,7 @@ mode: single
 ```
 
 
-Solcast - API Poll Schedule
+### Solcast - API Poll Schedule
 ```
 alias: Solcast - API Poll Schedule
 description: New API call Solcast
