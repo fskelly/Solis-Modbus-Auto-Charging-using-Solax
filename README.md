@@ -41,7 +41,7 @@ Split into three sections in the dashboard is your live solar data, taken direct
 
 * Inverter - Real-time House Load, Daily Consumption, Daily Export and Daily Import. 
 
-* Panels - Combined Output, String 1 and String 2.  (You may delete a string if it is not required on your system).
+* Panels - Combined Output, String 1 and String 2.  (You may want to delete string 2 and the combined output if they are not required on your system).
 -----
 ### Main Controls
 
