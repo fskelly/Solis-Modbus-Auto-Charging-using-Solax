@@ -24,8 +24,8 @@ Paste the following directly into your HA overview.
 7. Install Openweathermap integration from devices & services > add integration
 
 Note: Solcast and Openweathermap require you to set up and use your own API Keys.  You can sign up for a free account and get your API key at their websites
-https://toolkit.solcast.com.au/register/hobbyist
-https://home.openweathermap.org/users/sign_up
+* https://toolkit.solcast.com.au/register/hobbyist
+* https://home.openweathermap.org/users/sign_up
 
 
 ## Dashboard (Full) Code
