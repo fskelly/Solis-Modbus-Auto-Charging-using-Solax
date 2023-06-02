@@ -111,7 +111,9 @@ This is the heart of the UI to control your Automatic Battery Charging.  The con
 ### Inverter Stats & Future Solcast Data
 
 <img src="Images/Inverter Stats.png" width="400">
-Under Construction
+
+* Gauges to show live inverter stats:
+* today's Yield (kWh), Battery Charge Power (W), Battery Discharge Power (W), Import Export Power (W)
 
 
 ### Battery Config
