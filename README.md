@@ -42,26 +42,26 @@ Split into three sections in the dashboard is your live solar data, taken direct
 
 ### Main Controls
 
-
+Under Construction
 
 ### Auto Charge Status
 
-
+Under Construction
 
 
 ### Inverter Stats & Future Solcast Data
 
-
+Under Construction
 
 
 ### Battery Config
 
-
+Under Construction
 
 
 ### Weather Data
 
-
+Under Construction
 
 
 
