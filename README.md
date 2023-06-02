@@ -185,8 +185,6 @@ As an example, with my 10kWh battery and a Force Charge SoC set at 10%, the maxi
 
 ![Slide53](https://github.com/jevburchell/Solis-Modbus-Auto-Charging-using-Solax/assets/128035411/ca7ad0ef-5a44-4dbf-8d79-15e8a1e531dd)
 ![Slide54](https://github.com/jevburchell/Solis-Modbus-Auto-Charging-using-Solax/assets/128035411/42a2e100-3845-4162-82dd-acb5cb859be6)
-![Slide56](https://github.com/jevburchell/Solis-Modbus-Auto-Charging-using-Solax/assets/128035411/30e816ca-e831-4b2d-942c-d8edfaf3f3eb)
-![Slide58](https://github.com/jevburchell/Solis-Modbus-Auto-Charging-using-Solax/assets/128035411/d8775823-e58a-4650-b812-72f8137042b8)
 
 
 Feedback welcomed in the [Discussions Section](https://github.com/jevburchell/Solis-Modbus-Auto-Charging-using-Solax/discussions)
