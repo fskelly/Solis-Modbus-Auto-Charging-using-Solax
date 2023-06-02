@@ -28,4 +28,42 @@ And for those of you who already have your own dashboards setup, you can add the
 
 Alternatively, for those of you who are starting fresh with Home Assistant, you may use the [Backup Restore Method](https://github.com/jevburchell/Solis-Modbus-Auto-Charging-using-Solax/blob/main/HA%20Backup%20Restore.md) to fully configure your system.  This will bring across *all code* contained in this Repo, but YOU WILL LOSE ANY EXISTING DATA ON YOUR HOME ASSISTANT INSTANCE.  Think of this as copying the full Solar Automation setup onto your own machine, which you can then add onto as you wish.  This may be the most suitable option for Home Assistant beginners.
 
+
+# User Guide
+
+### Solar Data
+
+![Solar Data](https://github.com/jevburchell/Solis-Modbus-Auto-Charging-using-Solax/assets/128035411/ede6bfcb-1e71-4cf8-a229-278d12e3c3ca)
+
+Split into three sections in the dashboard is your live solar data, taken directly from your inverter using your Modbus interface and polled into Home Assistant at whatever rate you set using the Solax Integration.  I find 30 seconds works well and displays nicely in the graphs without using up too much disk space on my instance, and is not too processor-intensive.  Colours can be chosen to suit your needs easily.  Graphs are drawn using Apex Charts.
+* Battery - Soc, Daily Charge Amount and Daily Discharge Amount.
+* Inverter - Real-time House Load, Daily Consumption, Daily Export and Daily Import. 
+* Panels - Combined Output, String 1 and String 2.  (You may delete a string if it is not required on your system).
+
+### Main Controls
+
+
+
+### Auto Charge Status
+
+
+
+
+### Inverter Stats & Future Solcast Data
+
+
+
+
+### Battery Config
+
+
+
+
+### Weather Data
+
+
+
+
+
+
 Feedback welcomed in the [Discussions Section](https://github.com/jevburchell/Solis-Modbus-Auto-Charging-using-Solax/discussions)
