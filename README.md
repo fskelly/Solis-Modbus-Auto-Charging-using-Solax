@@ -109,7 +109,7 @@ This is the heart of the UI to control your Automatic Battery Charging.  The con
 -----
 ### Inverter Stats & Future Solcast Data
 
-<img src="Images/Inverter Stats.png" width="400">
+<img src="Images/Inverter Stats 1.png" width="400">
 
 * Gauges to show live inverter stats:
   * today's Yield (kWh)
@@ -120,8 +120,31 @@ This is the heart of the UI to control your Automatic Battery Charging.  The con
 
 * Cooling Fans Button - Note that this will be unconfigured when you import this code into your system.  You will need to set this up to control your fans (or delete if you don't have any)
 
+-----
 
-Under Construction
+<img src="Images/Inverter Stats 2.png" width="400">
+
+* Solcast Day 3/4/5/6 (Template Sensors) - Forecast data for days 3 - 6 in the future.  
+
+* API Polled (Sensor) - Shows the last time the Solcast servers were polled for data.
+
+* API Used (Sensor) - Number of API calls that you have made to the Solcast servers today.
+
+* Flux Discharge Start (Number) - The time in 24h format when the Flux Battery Discharge is set to begin.
+
+* Flux Discharge End (Number) - The time in 24h format when the Flux Battery Discharge is set to finish.  This is controlled by two automations which alter the end time from 16:00 to 19:00.
+
+-----
+
+<img src="Images/Inverter Stats 3.png" width="400">
+
+* Battery Heat Button - Note that this will be unconfigured when you import this code into your system.  You will need to set this up to control your battery heater (or delete if you don't have one).
+
+* OAT (Sensor) - Outside Air Temperature (useful for automating battery heat if you don't have a temperature sensor on the batteries themselves).
+
+* Chrg Limit (Sensor) - Battery Charge Limit from your BMS via Solax.
+
+* Disch Limit (Sensor) - Battery Discharge Limit from your BMS via Solax.
 
 -----
 ### Battery Config
