@@ -49,17 +49,17 @@ This is the heart of the UI to control your Automatic Battery Charging.  The con
 
 <img src="Images/Main Controls 1.png" width="500">
 
-* Restore Defaults (Button) - Returns your Expected Usage Numbers, Target SoC, Boost Charge, Base Load and Charge Current to their default values - which are chosen by you in the Automation "Solar - Restore Consumption Defaults".  My numbers will be different to yours, but may be a good starting point.
+* Restore Defaults (Button) - Returns your Expected Usage Numbers, Target SoC, Boost Charge, Base Load and Charge Current to their default values - which are chosen by you in the Automation ["Solar - Restore Consumption Defaults"](https://github.com/jevburchell/Solis-Modbus-Auto-Charging-using-Solax/blob/main/Automations.md#solar---restore-consumption-defaults).  My numbers will be different to yours, but may be a good starting point.
 
-* Flux Discharge (Button) - This is for us Octopus Flux customers who may want to discharge the battery to the grid between 16:00 and 19:00 on the peak rate.  This boolean control sets an automation to set those times, or to cancel those times.  Another Automation also cuts off the discharge if battery SoC drops below 50% during the Flux discharge - edit or delete this if you wish.
+* Flux Discharge (Button) - This is for us Octopus Flux customers who may want to discharge the battery to the grid between 16:00 and 19:00 on the peak rate.  This boolean control sets an [automation to set](https://github.com/jevburchell/Solis-Modbus-Auto-Charging-using-Solax/blob/main/Automations.md#flux---discharge-on) those times, or to [cancel those times](https://github.com/jevburchell/Solis-Modbus-Auto-Charging-using-Solax/blob/main/Automations.md#flux---discharge-off).  Another Automation also [cuts off the discharge](https://github.com/jevburchell/Solis-Modbus-Auto-Charging-using-Solax/blob/main/Automations.md#flux---discharge-cutout) if battery SoC drops below 50% during the Flux discharge - edit or delete this if you wish.
 
-* Auto Charge (Button) - Very simply, this turns the automated battery charging function on or off.  When on, you can sit back and watch it do it's thing.  When off, you can manually control the battery charging through the UI, or revert back to Solis Cloud.  Or climb into the loft.
+* Auto Charge (Button) - Very simply, this turns the [automated battery charging](https://github.com/jevburchell/Solis-Modbus-Auto-Charging-using-Solax/blob/main/Automations.md#solar---battery-charge-automation) function on or off.  When on, you can sit back and watch it do it's thing.  When off, you can manually control the battery charging through the UI, or revert back to Solis Cloud.  Or climb into the loft.
 
-* Update Times (Button) - Sends the currently set charging times to your inverter.  Only really needed if you're in manual mode or if you've changed settings and want to push them to your inverter.  The Solax integration has a button which sends all of the commanded charge times to the inverter at the same time, so a button is required to start that process.
+* Update Times (Button) - Sends the currently set charging times to your inverter via [an automation](https://github.com/jevburchell/Solis-Modbus-Auto-Charging-using-Solax/blob/main/Automations.md#solar---update-times).  Only really needed if you're in manual mode or if you've changed settings and want to push them to your inverter.  The Solax integration has a button which sends all of the commanded charge times to the inverter at the same time, so a button is required to start that process.
 -----
 <img src="Images/Main Controls 2.png" width="500">
 
-* Usage Today (Input Number) - Allows you to alter your expected consumption for today.  This is fed into the algorithm to calculate charge.  An automation "Solar - Expected Consumption Low State Tracker" also notices if your actual consumption exceeds this number, and increases it to follow in real time.  Also at 23:55, when the "Solar - Battery Charge Automation" runs, it automatically syncs the two to ensure no anomailies in the charge calculation.
+* Usage Today (Input Number) - Allows you to alter your expected consumption for today.  This is fed into the algorithm to calculate charge.  An [automation](https://github.com/jevburchell/Solis-Modbus-Auto-Charging-using-Solax/blob/main/Automations.md#solar---expected-consumption-low-state-tracker) also notices if your actual consumption exceeds this number, and increases it to follow in real time.  Also at 23:55, when the ["Solar - Battery Charge Automation"](https://github.com/jevburchell/Solis-Modbus-Auto-Charging-using-Solax/blob/main/Automations.md#solar---battery-charge-automation) runs, it automatically syncs the two to ensure no anomailies in the charge calculation.
 
 * Usage Tomorrow (Input Number) - Allows you to alter your expected consumption for tomorrow.  This is fed into the algorithm to calculate charge. 
 
@@ -132,7 +132,7 @@ This is the heart of the UI to control your Automatic Battery Charging.  The con
 
 * Flux Discharge Start (Number) - The time in 24h format when the Flux Battery Discharge is set to begin.
 
-* Flux Discharge End (Number) - The time in 24h format when the Flux Battery Discharge is set to finish.  This is controlled by two automations which alter the end time from 16:00 to 19:00.
+* Flux Discharge End (Number) - The time in 24h format when the Flux Battery Discharge is set to finish.  This is controlled by two [automations](https://github.com/jevburchell/Solis-Modbus-Auto-Charging-using-Solax/blob/main/Automations.md#flux---discharge-on) which alter the end time from 16:00 to 19:00.
 
 -----
 ### Battery Config
@@ -155,7 +155,7 @@ As an example, with my 10kWh battery and a Force Charge SoC set at 10%, the maxi
 
 * System Capacity above Forcecharge (Template Sensor) - System Capacity in kWh from 100% to your Forcecharge SoC. 
 
-* Calculated Charge Current (Template Sensor) - using the above variables, a charge current is calculated and displayed here.  An automation "Solar - Charge Current Settings" also runs in the background so that this figure is updated and sent to the inverter in real-time whenever any of the Battery Config settings are altered.
+* Calculated Charge Current (Template Sensor) - using the above variables, a charge current is calculated and displayed here.  An [automation](https://github.com/jevburchell/Solis-Modbus-Auto-Charging-using-Solax/blob/main/Automations.md#solar---charge-current-settings) "Solar - Charge Current Settings" also runs in the background so that this figure is updated and sent to the inverter in real-time whenever any of the Battery Config settings are altered.
 
 -----
 
