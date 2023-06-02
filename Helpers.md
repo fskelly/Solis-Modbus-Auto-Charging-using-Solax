@@ -4,7 +4,7 @@ You must create the following Helpers in HA.  This is more of a manual process a
 
 1. Click Settings > Devices & Services > Helpers > + "Create Helper"
 
-2. Use the 3rd line of each of the items below to choose helpers (number, toggle or button).  Name them exactly the same as specified in each title.  Your max/min and step sizes will be dependant on your own needs, but my numbers here should serve as a suitable starting point.
+2. Use the 3rd line of each of the items below to choose helpers (number, toggle or button).  Name them exactly the same as specified in each title.  Your max/min and step sizes will be dependant on your own needs, but my numbers here should serve as a suitable starting point for most (if not all) installations.
 
 
 ### Base Load
