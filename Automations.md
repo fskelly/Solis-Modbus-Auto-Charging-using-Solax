@@ -6,7 +6,7 @@ Copy below automations into your HA instance.
 
 2. Click the three dots top right and Choose Edit in YAML
 
-3. Paste each automation below into the code field
+3. Paste each individual automation below into the code field
 
 4. Hit SAVE and allow the automations to be named EXACTLY as detailed on each automation's Line 1 after "alias:".  This should happen automatically for you.
 
