@@ -43,7 +43,7 @@ Split into three sections in the dashboard is your live solar data, taken direct
 ### Main Controls
 
 Under Construction
-<img src="" width="500">
+<img src="Images/Main Controls.png" width="500">
 
 ### Auto Charge Status
 
