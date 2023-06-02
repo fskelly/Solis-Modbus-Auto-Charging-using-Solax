@@ -1,6 +1,6 @@
-********************************************************************************************************************
-
 This is the MINIMALIST version of the Automated Solar Charging Dashboard.  This contains only items which relate directly to the control of the Automations - so graphs, weather etc have been excluded.
+
+# Installation
 
 Paste the following directly into your HA overview.
 
@@ -20,7 +20,7 @@ Paste the following directly into your HA overview.
 	[Solcast](https://github.com/oziee/ha-solcast-solar) note: I find that hitting the code button and downloading the sip has more success with install.
 	[Solax Modbus](https://github.com/wills106/homeassistant-solax-modbus)
 
-********************************************************************************************************************
+```
   - title: Minimalist
     path: minimalist
     icon: mdi:weather-sunny
@@ -217,4 +217,4 @@ Paste the following directly into your HA overview.
                 name: System Capacity Above Forcecharge
               - entity: sensor.calculated_charge_current
                 name: Calculated Charge Current
-
+```
