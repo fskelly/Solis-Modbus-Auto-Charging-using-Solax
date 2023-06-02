@@ -20,24 +20,6 @@ And for those of you who already have your own dashboards setup, you can add the
 
 <img src="Images/HA Minimalist Dashboard.png" width="800">
 
-Alternatively, for those of you who are starting fresh with Home Assistant, you may simply install [this](https://github.com/jevburchell/Solis-Modbus-Auto-Charging-using-Solax/blob/main/HA%20Solis%20Solax%20Automation%20Backup%201.6.23.tar) Backup file to your system.  This will bring across all code contained in this Repo, but YOU WILL LOSE ANY EXISTING DATA ON YOUR HOME ASSISTANT INSTANCE.  
+Alternatively, for those of you who are starting fresh with Home Assistant, you may use the [Backup Restore Method](https://github.com/jevburchell/Solis-Modbus-Auto-Charging-using-Solax/blob/main/HA%20Backup%20Restore.md) to fully configure your system.  This will bring across *all code* contained in this Repo, but YOU WILL LOSE ANY EXISTING DATA ON YOUR HOME ASSISTANT INSTANCE.  Think of this as copying the full Solar Automation setup onto your own machine, which you can then add onto as you wish.  This may be the most suitable option for Home Assistant beginners.
 
-INSTALLATION:
-
-1. Download the above .tar file (click Raw in the linked page if it doesn't auto download)
-2. In Home Assistant, go to Settings > System > Backups
-3. Hit the three dots top right and choose "Upload Backup"
-4. Navigate to the .tar file and upload it
-5. The backup file will now appear in your HA list.  Double click on it, choose "full backup", then hit "Restore".  The process will install all code.
-6. You will need to alter a couple of settings to suit your own installation.  
-    - [Solcast](https://toolkit.solcast.com.au/register/hobbyist) API Key
-    - [Openweathermap](https://home.openweathermap.org/users/sign_up) API Key
-    - [Solax Integration](https://github.com/wills106/homeassistant-solax-modbus) settings (you must enter the correct IP address of your Modbus device which connects to your inverter)
-    - Battery Heat and Cooling Fans buttons will need to be linked to your own devices, if you have them.
-
-HA Credentials: 
-* user: default_user
-* password: abcde12345
-* Please change these...
-    
 Feedback welcomed!
