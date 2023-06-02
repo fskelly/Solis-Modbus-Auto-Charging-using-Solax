@@ -1,4 +1,4 @@
-********************************************************************************************************************
+# Installation
 
 Paste the following directly into your HA overview.
 
@@ -23,7 +23,8 @@ Paste the following directly into your HA overview.
 
 7. Install Openweathermap integration from devices & services > add integration
 
-********************************************************************************************************************
+## Dashboard (Full) Code
+```
   - theme: minimalist-mobile
     title: Solar
     path: solar
@@ -450,3 +451,4 @@ Paste the following directly into your HA overview.
               dusk: true
               noon: true
         columns: 1
+```
