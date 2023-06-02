@@ -12,7 +12,7 @@ You must install HACS integrations and frontend as specified in the repo files.
 
 Required HA integrations for this to work are [Solax Modbus](https://github.com/wills106/homeassistant-solax-modbus) and [Solcast](https://toolkit.solcast.com.au/register/hobbyist) (configured to your existing system).
 
-Here is what the full [Dashboard](https://github.com/jevburchell/Solis-Modbus-Auto-Charging-using-Solax/blob/main/Dashboard) will look like:
+Here is what the full [Dashboard](https://github.com/jevburchell/Solis-Modbus-Auto-Charging-using-Solax/blob/main/Dashboard%20(Full).md) will look like:
 
 ![HA Export Dashboard2](https://github.com/jevburchell/Solis-Modbus-Auto-Charging-using-Solax/assets/128035411/451abbf0-af92-4203-b706-1d481615832e)
 
