@@ -33,7 +33,7 @@ Alternatively, for those of you who are starting fresh with Home Assistant, you 
 
 ### Solar Data
 
-<img src="Images/Solar Data.png" width="800">
+<img src="Images/Solar Data.png">
 
 Split into three sections in the dashboard is your live solar data, taken directly from your inverter using your Modbus interface and polled into Home Assistant at whatever rate you set using the Solax Integration.  I find 30 seconds works well and displays nicely in the graphs without using up too much disk space on my instance, and is not too processor-intensive.  Colours can be chosen to suit your needs easily.  Graphs are drawn using Apex Charts.
 * Battery - Soc, Daily Charge Amount and Daily Discharge Amount.
@@ -43,26 +43,27 @@ Split into three sections in the dashboard is your live solar data, taken direct
 ### Main Controls
 
 Under Construction
+<img src="" width="800">
 
 ### Auto Charge Status
 
 Under Construction
-
+<img src="Images/Auto Charge Status.png" width="800">
 
 ### Inverter Stats & Future Solcast Data
 
 Under Construction
-
+<img src="Images/Inverter Stats.png" width="800">
 
 ### Battery Config
 
 Under Construction
-
+<img src="Images/Battery Config.png" width="800">
 
 ### Weather Data
 
 Under Construction
-
+<img src="Images/Weather Data.png" width="800">
 
 
 
