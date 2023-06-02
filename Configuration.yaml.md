@@ -66,7 +66,7 @@ Paste the following directly into your Configuration.yaml file
         unit_of_measurement: 'kWh'
         device_class: energy
         state: |-
-         {% set sum = states('sensor.forecast_remaining_today') | float(0) + states('sensor.soc_usable_kwh') | float(0) - (states('input_number.expected_consumption') | float(0) - states('sensor.solax_house_load_today') | float(0)) - (states('input_number.base_load') | float(0) * states('sensor.soc_charge_start_time_decimal') | float(0)) | round(2)%}
+         {% set sum = states('sensor.solcast_forecast_remaining_today') | float(0) + states('sensor.soc_usable_kwh') | float(0) - (states('input_number.expected_consumption') | float(0) - states('sensor.solax_house_load_today') | float(0)) - (states('input_number.base_load') | float(0) * states('sensor.soc_charge_start_time_decimal') | float(0)) | round(2)%}
          {% set max = (states('sensor.soc_usableforcecharge') | float(0))%}
          {{ ([0, sum, max] | sort)[1] }}
   - sensor:
@@ -93,7 +93,7 @@ Paste the following directly into your Configuration.yaml file
         unit_of_measurement: 'kWh'
         device_class: energy
         state: |-
-         {% set sum = states('sensor.soc_at_end_of_offpeak_tonight_no_charge') | float(0) + states('sensor.forecast_tomorrow') | float(0) - (states('input_number.expected_consumption_tomorrow') | float(0) - (3 * states('input_number.base_load') | float(0))) - (states('input_number.base_load') | float(0) * states('sensor.soc_charge_start_time_decimal') | float(0)) | round(2)%}
+         {% set sum = states('sensor.soc_at_end_of_offpeak_tonight_no_charge') | float(0) + states('sensor.solcast_forecast_tomorrow') | float(0) - (states('input_number.expected_consumption_tomorrow') | float(0) - (3 * states('input_number.base_load') | float(0))) - (states('input_number.base_load') | float(0) * states('sensor.soc_charge_start_time_decimal') | float(0)) | round(2)%}
          {% set max = (states('sensor.soc_usableforcecharge') | float(0))%}
          {{ ([0, sum, max] | sort)[1] }}
   - sensor:
@@ -102,7 +102,7 @@ Paste the following directly into your Configuration.yaml file
         unit_of_measurement: 'kWh'
         device_class: energy
         state: |-
-         {% set sum = states('sensor.soc_at_end_of_offpeak_tonight_with_charge') | float(0) + states('sensor.forecast_tomorrow') | float(0) - (states('input_number.expected_consumption_tomorrow') | float(0) - (3 * states('input_number.base_load') | float(0))) - (states('input_number.base_load') | float(0) * states('sensor.soc_charge_start_time_decimal') | float(0)) | round(2)%}
+         {% set sum = states('sensor.soc_at_end_of_offpeak_tonight_with_charge') | float(0) + states('sensor.solcast_forecast_tomorrow') | float(0) - (states('input_number.expected_consumption_tomorrow') | float(0) - (3 * states('input_number.base_load') | float(0))) - (states('input_number.base_load') | float(0) * states('sensor.soc_charge_start_time_decimal') | float(0)) | round(2)%}
          {% set max = (states('sensor.soc_usableforcecharge') | float(0))%}
          {{ ([0, sum, max] | sort)[1] }}
   - sensor:
