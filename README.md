@@ -112,7 +112,7 @@ This is the heart of the UI to control your Automatic Battery Charging.  The con
 <img src="Images/Inverter Stats 1.png" width="500">
 
 * Gauges to show live inverter stats:
-  * today's Yield (kWh)
+  * Today's Yield (kWh)
   * Battery Charge Power (W)
   * Battery Discharge Power (W)
   * Import Export Power (W)
@@ -149,14 +149,32 @@ This is the heart of the UI to control your Automatic Battery Charging.  The con
 -----
 ### Battery Config
 
+This is a very important section and contributes a key element to the algorithm.  As Solar customers with differing installations, we have different size battery packs and have alterations in our settings depending on how deep we dare discharge our batteries.  These 3 elements have a direct impact on our useful amount of battery storage in kWh, and thus how fast we need to charge those batteries in a given charge window.  
+
+As an example, with my 10kWh battery and a Force Charge SoC set at 10%, the maximum charge that I could apply to my batteries in an Off-Peak charge window would be 9kWh.  Given the charge window is 3 hours long on Octopus Flux, I need to charge 3kWh per hour to achieve a full charge - or 3000W charge power for those 3 hours.  The inverter needs to know that as a charge current, and at 55V a charge current of 55A gives me 3,025W which is sufficient to charge my batteries.  My neighbour down the street with a 15kWh battery and Force Charge SoC at 10% will need to charge at 4,500W or 82A, and so on.  These numbers can be "set-and-forget" - in fact you may even want to set them and remove from your dashboard altogether.  
+
 <img src="Images/Battery Config.png" width="500">
-Under Construction
+
+* Battery Capacity (Number Input) - The full size of your battery storage system.
+
+* Overdischarge SoC (Number Input) - Match the percentage that you have set this to in your inverter settings.  This is the % SoC below which your inverter will go into trickle discharge mode, and you will be importing electricity from the grid until your solar panels produce enough out put to charge your batteries again.
+
+* Forcecharge SoC (Number Input) - Match the percentage that you have set this to in your inverter settings.  This is the % SoC at which your battery Force Charges itself from the grid no matter what is happening.  This is a functionality preservation system built into pretty much all modern battery systems, and prevents your batteries from going into a deep discharge state.  Reduce this setting at your peril!!
+
+* Useful System Capacity (Template Sensor) - System Capacity in kWh from 100% to your Overdischarge SoC.  
+
+* System Capacity above Forcecharge (Template Sensor) - System Capacity in kWh from 100% to your Forcecharge SoC. 
+
+* Calculated Charge Current (Template Sensor) - using the above variables, a charge current is calculated and displayed here.  An automation "Solar - Charge Current Settings" also runs in the background so that this figure is updated and sent to the inverter in real-time whenever any of the Battery Config settings are altered.
 
 -----
 ### Weather Data
 
 <img src="Images/Weather Data.png" width="500">
-Under Construction
+
+* Openweathermap card - classic weather widget.  Remember to set up your own API on their website.
+* Hourly Weather Card - shows basic pictoral weather over the next 24 hours.
+* Horizon Card - visual representation of the Azimuth & Elevation of the sun in the sky.
 
 -----
 Feedback welcomed in the [Discussions Section](https://github.com/jevburchell/Solis-Modbus-Auto-Charging-using-Solax/discussions)
