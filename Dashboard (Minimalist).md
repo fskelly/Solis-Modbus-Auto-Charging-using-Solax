@@ -1,5 +1,7 @@
 This is the MINIMALIST version of the Automated Solar Charging Dashboard.  This contains only items which relate directly to the control of the Automations - so graphs, weather etc have been excluded.
 
+![HA Minimalist Dashboard](https://github.com/jevburchell/Solis-Modbus-Auto-Charging-using-Solax/assets/128035411/e4133a7d-2cff-422a-b81e-609d5a0961b7)
+
 # Installation
 
 Paste the following directly into your HA overview.
