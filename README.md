@@ -4,7 +4,7 @@ Experimental code to transfer into your existing HA integration to support Autom
 
 This code brings together a [hardware integration](https://github.com/Jumpy07/Solis---SolisCloud-and-Home-Assistant) fomulated by @Jumpy07 and software by @Jevburchell to automate your solar PV battery charging.  
 
-A video on the theory involved in Automatic Battery Charging based on Solar Forecasting can be found here: https://youtu.be/fF0odNXTx48
+A video on the theory involved in Automatic Battery Charging based on Solar Forecasting can be found [here](https://youtu.be/fF0odNXTx48)
 
 Five files exist here - code for your Home Assistant dashboard (full or minimalist variants), code for Template Sensors (config.yaml), code for Automations and definitions for Helpers.  Instructions on where to copy & paste exist within each repo file.
 
