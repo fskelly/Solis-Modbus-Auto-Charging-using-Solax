@@ -42,29 +42,30 @@ Split into three sections in the dashboard is your live solar data, taken direct
 
 ### Main Controls
 
-Under Construction
 <img src="Images/Main Controls.png" width="400">
 
 ### Auto Charge Status
 
-Under Construction
 <img src="Images/Auto Charge Status.png" width="400">
+Under Construction
+
 
 ### Inverter Stats & Future Solcast Data
 
-Under Construction
 <img src="Images/Inverter Stats.png" width="400">
+Under Construction
+
 
 ### Battery Config
 
-Under Construction
 <img src="Images/Battery Config.png" width="400">
+Under Construction
+
 
 ### Weather Data
 
-Under Construction
 <img src="Images/Weather Data.png" width="400">
-
+Under Construction
 
 
 Feedback welcomed in the [Discussions Section](https://github.com/jevburchell/Solis-Modbus-Auto-Charging-using-Solax/discussions)
