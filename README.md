@@ -47,11 +47,17 @@ Split into three sections in the dashboard is your live solar data, taken direct
 
 <img src="Images/Main Controls.png" width="400">
 This is the heart of the UI to control your Automatic Battery Charging.  The controls here are simple, yet feed data to the charge logic to make a relatively complex decision about whether to charge your batteries.  And if so, by how much.  Each control and display parameter does the following:
+
 * Restore Defaults (Button) - Returns your Expected Usage Numbers, Target SoC, Boost Charge, Base Load and Charge Current to their default values - which are chosen by you in the Automation "Solar - Restore Consumption Defaults".  My numbers will be different to yours, but may be a good starting point.
+
 * Flux Discharge (Button) - This is for us Octopus Flux customers who may want to discharge the battery to the grid between 16:00 and 19:00 on the peak rate.  This boolean control sets an automation to set those times, or to cancel those times.  Another Automation also cuts off the discharge if battery SoC drops below 50% during the Flux discharge - edit or delete this if you wish.
+
 * Auto Charge (Button) - Very simply, this turns the automated battery charging function on or off.  When on, you can sit back and watch it do it's thing.  When off, you can manually control the battery charging through the UI, or revert back to Solis Cloud.  Or climb into the loft.
+
 * Update Times (Button) - Sends the currently set charging times to your inverter.  Only really needed if you're in manual mode or if you've changed settings and want to push them to your inverter.  The Solax integration has a button which sends all of the commanded charge times to the inverter at the same time, so a button is required to start that process.
+
 -----
+
 * Usage Today (Input Number) - Allows you to alter your expected consumption for today.  This is fed into the algorithm to calculate charge.  An automation "Solar - Expected Consumption Low State Tracker" also notices if your actual consumption exceeds this number, and increases it to follow in real time.  Also at 23:55, when the "Solar - Battery Charge Automation" runs, it automatically syncs the two to ensure no anomailies in the charge calculation.
 * Usage Tomorrow (Input Number) - Allows you to alter your expected consumption for tomorrow.  This is fed into the algorithm to calculate charge. 
 * Target SoC (Input Number) - Allows you to set your Target SoC (in kWh) that your battery will have at the start of the Offpeak period not tomorrow, but the next day. This is fed into the algorithm to calculate charge. 
