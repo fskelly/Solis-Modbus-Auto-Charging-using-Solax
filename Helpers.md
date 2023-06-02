@@ -1,13 +1,13 @@
-********************************************************************************************************************
-
 You must create the following Helpers in HA.
+
+# Installation
 
 1. Click Settings > Devices & Services > Helpers > + "Create Helper"
 
 2. Use the 3rd line of each of the below to choose helpers (number or button).  Name them exactly the same as specified here.  Your max/min and step sizes will be dependant on your own needs, but my numbers here should serve as a suitable starting point.
 
-********************************************************************************************************************
-Base Load
+
+### Base Load
 input_number.base_load
 Number
 Minimum Value: 0
