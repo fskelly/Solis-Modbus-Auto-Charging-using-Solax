@@ -11,17 +11,22 @@ Paste the following directly into your HA overview.
 4. Hit save, then X (top left) to exit
 
 5. Install the following HACS Frontend:
-	a. Horizon Card - http://homeassistant.local:8123/hacs/repository/614083491
-	b. Apexcharts-card - http://homeassistant.local:8123/hacs/repository/331701152
-	c. Mushroom Themes - http://homeassistant.local:8123/hacs/repository/456201687
-	d. Mushroom - http://homeassistant.local:8123/hacs/repository/444350375
-	e. Hourly Weather Card - http://homeassistant.local:8123/hacs/repository/499270202
+	a. [Horizon Card](http://homeassistant.local:8123/hacs/repository/614083491)
+	b. [Apexcharts-card](http://homeassistant.local:8123/hacs/repository/331701152)
+	c. [Mushroom Themes](http://homeassistant.local:8123/hacs/repository/456201687)
+	d. [Mushroom](http://homeassistant.local:8123/hacs/repository/444350375)
+	e. [Hourly Weather Card](http://homeassistant.local:8123/hacs/repository/499270202)
 
-6. You must have "Solcast PV Solar" and "Solax Modbus" HACS Integrations installed and configured to your own system:
-	Solcast: https://github.com/oziee/ha-solcast-solar note: I find that hitting the code button and downloading the sip has more success with install.
-	Solax Modbus: https://github.com/wills106/homeassistant-solax-modbus
+6. You must have "Solcast PV Solar" and "Solax Modbus" HACS Integrations installed and configured to your own system
+	[Solcast](https://github.com/oziee/ha-solcast-solar) note: I find that hitting the code button and downloading the sip has more success with install.
+	[Solax Modbus](https://github.com/wills106/homeassistant-solax-modbus)
 
 7. Install Openweathermap integration from devices & services > add integration
+
+Note: Solcast and Openweathermap require you to set up and use your own API Keys.  You can sign up for a free account and get your API key at their websites
+https://toolkit.solcast.com.au/register/hobbyist
+https://home.openweathermap.org/users/sign_up
+
 
 ## Dashboard (Full) Code
 ```
