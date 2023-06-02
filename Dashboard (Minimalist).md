@@ -13,8 +13,8 @@ Paste the following directly into your HA overview.
 4. Hit save, then X (top left) to exit
 
 5. Install the following HACS Frontend:
-	a. [Mushroom Themes](http://homeassistant.local:8123/hacs/repository/456201687)
-	b. [Mushroom](http://homeassistant.local:8123/hacs/repository/444350375)
+	[Mushroom Themes](http://homeassistant.local:8123/hacs/repository/456201687)
+	[Mushroom](http://homeassistant.local:8123/hacs/repository/444350375)
 
 6. You must have "Solcast PV Solar" and "Solax Modbus" HACS Integrations installed and configured to your own system:
 	[Solcast](https://github.com/oziee/ha-solcast-solar) note: I find that hitting the code button and downloading the sip has more success with install.
