@@ -17,6 +17,12 @@ HA Credentials:
 * password: abcde12345
 * Please change these...
 
+-----
+
+After Installation please read the [User Guide](https://github.com/jevburchell/Solis-Modbus-Auto-Charging-using-Solax/blob/main/README.md#user-guide) carefully to understand what each control does and how the dashboard works.
+
+-----
+
 ## .tar File
 
 [Download Here](https://github.com/jevburchell/Solis-Modbus-Auto-Charging-using-Solax/blob/main/Images/HA%20Solis%20Solax%20Automation%20Backup%201.6.23.tar)
