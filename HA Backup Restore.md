@@ -1,6 +1,6 @@
 # Installation
 
-If you are installing HA for the very first time and are on the first initialisation screen, you can click "Alternatively, you can restore from a previous backup" and follow the instructions to install.  If you already have HA installed, do the following:
+If you are installing HA for the very first time and are on the onboarding screen, you can click "Alternatively, you can restore from a previous backup" and follow the instructions to install.  If you already have HA installed, do the following:
 
 1. Download the below .tar file (click Raw in the linked page if it doesn't auto download)
 2. In Home Assistant, go to Settings > System > Backups
