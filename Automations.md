@@ -202,6 +202,7 @@ trigger:
       - input_number.battery_capacity
       - input_number.overdischarge_soc
       - input_number.force_charge_soc
+      - input_number.offpeak_window
 condition: []
 action:
   - service: number.set_value
