@@ -75,7 +75,7 @@ Paste the following directly into your Configuration.yaml file
         unit_of_measurement: 'kWh'
         device_class: energy
         state: |-
-         {% set sum = states('sensor.soc_at_start_of_offpeak_tonight') |float(0) - (states('input_number.offpeak_window') | float(0) * states('input_number.base_load') |float(0)) + states('input_number.boost_charge') |float(0) | round(2)%}
+         {% set sum = states('sensor.soc_at_start_of_offpeak_tonight') |float(0) - (states('input_number.offpeak_window') | float(0) * states('input_number.base_load') |float(0)) | round(2)%}
          {% set max = (states('sensor.soc_usableforcecharge') | float(0))%}
          {{ ([0, sum, max] | sort)[1] }}
   - sensor:
@@ -84,7 +84,7 @@ Paste the following directly into your Configuration.yaml file
         unit_of_measurement: 'kWh'
         device_class: energy
         state: |-
-         {% set sum = (states('sensor.soc_at_start_of_offpeak_tonight') | float(0) + states('sensor.soc_required_charge') | float(0) - (states('input_number.offpeak_window') | float(0) - states('sensor.soc_charge_time_decimal') | float(0)) * states('input_number.base_load') | float(0)) + states('input_number.boost_charge') | float(0)| round(2)%}
+         {% set sum = (states('sensor.soc_at_start_of_offpeak_tonight') | float(0) + states('sensor.soc_required_charge_plus_boost') | float(0) - (states('input_number.offpeak_window') | float(0) - states('sensor.soc_charge_time_decimal') | float(0)) * states('input_number.base_load') | float(0)) + states('input_number.boost_charge') | float(0)| round(2)%}
          {% set max = (states('sensor.soc_usableforcecharge') | float(0))%}
          {{ ([0, sum, max] | sort)[1] }}
   - sensor:
@@ -95,7 +95,7 @@ Paste the following directly into your Configuration.yaml file
         state: |-
          {% set sum = states('sensor.soc_at_end_of_offpeak_tonight_no_charge') | float(0) + states('sensor.solcast_forecast_tomorrow') | float(0) - (states('input_number.expected_consumption_tomorrow') | float(0) - (states('input_number.offpeak_window') | float(0) * states('input_number.base_load') | float(0))) - (states('input_number.base_load') | float(0) * states('sensor.soc_charge_start_time_decimal') | float(0)) | round(2)%}
          {% set max = (states('sensor.soc_usableforcecharge') | float(0))%}
-         {{ ([0, sum, max] | sort)[1] }}
+         {{ ([-10, sum, max] | sort)[1] }}
   - sensor:
       - name: "SoC at Start of Offpeak Tomorrow - With Charge"
         unique_id: "soc_start_of_offpeak_tomorrow_with_charge"
