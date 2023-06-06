@@ -67,6 +67,14 @@ You must create the following Helpers in HA.  This is more of a manual process a
 * Step Size: 1
 * Unit of Measurement: %
 
+### Offpeak Window
+* input_number.offpeak_window
+* Number
+* Minimum Value: 1
+* Maximum Value: 7
+* Step Size: 1
+* Unit of Measurement: Hours
+
 ### Overdischarge SoC
 * input_number.overdischarge_soc
 * Number
