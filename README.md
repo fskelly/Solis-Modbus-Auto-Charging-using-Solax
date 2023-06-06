@@ -93,6 +93,8 @@ This is the heart of the UI to control your Automatic Battery Charging.  The con
 
 * Charge Current (Input Number) - You can manually control this, but it is set automatically by Battery Config section below.  It directly controls the rate at which your batteries will charge.
 
+* Offpeak Window (Input Number) - A key input which sets the length of your cheap offpeak period.  This affects the charge time and charge current in particular, and should be set to match your Tariff: 3 hours on Flux, 7 hours on Eco7 etc.
+
 -----
 ### Auto Charge Status
 
