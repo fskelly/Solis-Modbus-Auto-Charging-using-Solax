@@ -28,8 +28,9 @@ Paste the following directly into your HA overview.
 
 ## Dashboard (Minimalist) Code
 ```
-  - title: Minimalist
-    path: minimalist
+  - theme: minimalist-mobile
+    title: Minidash
+    path: minidash
     icon: mdi:weather-sunny
     badges: []
     cards:
@@ -63,7 +64,7 @@ Paste the following directly into your HA overview.
                 type: button
                 tap_action:
                   action: toggle
-                entity: automation.solar_battery_charge_automation
+                entity: automation.battery_charge_automation
                 show_state: true
                 icon: mdi:battery-charging-40
                 icon_height: 20px
@@ -153,6 +154,34 @@ Paste the following directly into your HA overview.
         columns: 1
         type: grid
         cards:
+          - square: false
+            type: grid
+            cards:
+              - type: custom:mushroom-number-card
+                entity: input_number.boost_charge
+                icon_type: none
+                layout: horizontal
+                display_mode: buttons
+              - type: custom:mushroom-number-card
+                entity: input_number.base_load
+                layout: horizontal
+                fill_container: false
+                icon_type: none
+                display_mode: slider
+                name: Base Load
+              - type: custom:mushroom-number-card
+                entity: number.solax_timed_charge_current
+                icon_type: none
+                name: Charge Current
+                fill_container: false
+                layout: horizontal
+              - type: custom:mushroom-number-card
+                entity: input_number.offpeak_window
+                display_mode: buttons
+                icon_type: none
+                layout: horizontal
+                name: Offpk Window
+            columns: 2
           - show_name: true
             show_icon: false
             show_state: true
@@ -166,37 +195,15 @@ Paste the following directly into your HA overview.
                 name: Solcast Day 5
               - entity: sensor.solcast_forecast_d6
                 name: Solcast Day 6
-              - entity: sensor.api_last_polled
+              - entity: sensor.solcast_api_last_polled
                 name: API Polled
-              - entity: sensor.api_used
+              - entity: sensor.solcast_api_used
                 name: API Used
               - entity: number.solax_timed_discharge_start_hours
                 name: Flux disch Start
               - entity: number.solax_timed_discharge_end_hours
                 name: Flux disch End
             columns: 4
-          - square: false
-            type: grid
-            cards:
-              - type: custom:mushroom-number-card
-                entity: input_number.boost_charge
-                icon_type: none
-                layout: vertical
-                display_mode: buttons
-              - type: custom:mushroom-number-card
-                entity: input_number.base_load
-                layout: vertical
-                fill_container: false
-                icon_type: none
-                display_mode: slider
-                name: Base Load
-              - type: custom:mushroom-number-card
-                entity: number.solax_timed_charge_current
-                icon_type: none
-                name: Charge Current
-                fill_container: false
-                layout: vertical
-            columns: 3
           - square: false
             type: grid
             cards:
