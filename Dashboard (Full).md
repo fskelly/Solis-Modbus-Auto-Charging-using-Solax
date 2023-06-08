@@ -1,3 +1,7 @@
+This is the Full version of the Automated Charging Dashboard.
+
+<img src="Images/HA Full Dashboard.png">
+
 # Installation
 
 Paste the following directly into your HA overview.
