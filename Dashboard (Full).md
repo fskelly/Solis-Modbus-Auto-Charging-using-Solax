@@ -34,8 +34,8 @@ Note: Solcast and Openweathermap require you to set up and use your own API Keys
 ## Dashboard (Full) Code
 ```
   - theme: minimalist-mobile
-    title: Solar
-    path: solar
+    title: Fulldash
+    path: fulldash
     icon: mdi:white-balance-sunny
     badges: []
     cards:
@@ -114,7 +114,7 @@ Note: Solcast and Openweathermap require you to set up and use your own API Keys
                 type: button
                 tap_action:
                   action: toggle
-                entity: automation.solar_battery_charge_automation
+                entity: automation.battery_charge_automation
                 show_state: true
                 icon: mdi:battery-charging-40
                 icon_height: 20px
@@ -195,11 +195,11 @@ Note: Solcast and Openweathermap require you to set up and use your own API Keys
               - type: custom:mushroom-number-card
                 entity: input_number.boost_charge
                 icon_type: none
-                layout: vertical
+                layout: horizontal
                 display_mode: buttons
               - type: custom:mushroom-number-card
                 entity: input_number.base_load
-                layout: vertical
+                layout: horizontal
                 fill_container: false
                 icon_type: none
                 display_mode: slider
@@ -209,7 +209,14 @@ Note: Solcast and Openweathermap require you to set up and use your own API Keys
                 icon_type: none
                 name: Charge Current
                 fill_container: false
-            columns: 3
+                layout: horizontal
+              - type: custom:mushroom-number-card
+                entity: input_number.offpeak_window
+                display_mode: buttons
+                icon_type: none
+                layout: horizontal
+                name: Offpk Window
+            columns: 2
           - type: entities
             entities:
               - entity: sensor.auto_charge_scheduled
@@ -324,9 +331,11 @@ Note: Solcast and Openweathermap require you to set up and use your own API Keys
                 type: button
                 tap_action:
                   action: toggle
-                entity: input_button.cooling_fans
-                show_state: false
-                icon_height: 40px
+                entity: switch.tapo_1
+                show_state: true
+                name: Cooling Fans
+                icon: mdi:fan
+                icon_height: 30px
             columns: 3
           - show_name: true
             show_icon: false
@@ -341,9 +350,9 @@ Note: Solcast and Openweathermap require you to set up and use your own API Keys
                 name: Solcast Day 5
               - entity: sensor.solcast_forecast_d6
                 name: Solcast Day 6
-              - entity: sensor.api_last_polled
+              - entity: sensor.solcast_api_last_polled
                 name: API Polled
-              - entity: sensor.api_used
+              - entity: sensor.solcast_api_used
                 name: API Used
               - entity: number.solax_timed_discharge_start_hours
                 name: Flux disch Start
@@ -358,8 +367,11 @@ Note: Solcast and Openweathermap require you to set up and use your own API Keys
                 type: button
                 tap_action:
                   action: toggle
-                entity: input_button.battery_heat
+                entity: switch.kasa_smart_plug_1
                 icon_height: 20px
+                name: Battery Heat
+                show_state: true
+                icon: mdi:home-battery
               - type: custom:mushroom-entity-card
                 entity: sensor.openweathermap_temperature
                 icon_type: none
