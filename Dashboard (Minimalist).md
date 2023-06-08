@@ -1,6 +1,6 @@
 This is the MINIMALIST version of the Automated Solar Charging Dashboard.  This contains only items which relate directly to the control of the Automations - so graphs, weather etc have been excluded.
 
-![HA Minimalist Dashboard](Images/HA Minimalist Dashboard.png | width=200px)
+<img src="Images/HA Minimalist Dashboard.png" width="800">
 
 # Installation
 
